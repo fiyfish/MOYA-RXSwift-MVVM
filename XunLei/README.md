@@ -1,4 +1,4 @@
-# EXErcise
+# EXERCISE
 
 A sample app to experiment with:
 - MOYA
