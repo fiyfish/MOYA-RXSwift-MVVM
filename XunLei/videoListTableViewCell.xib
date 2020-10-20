@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="75" id="KGk-i7-Jjw" customClass="videoListTableViewCell" customModule="迅雷小白虫" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vRA-I0-IOt">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Pbb-my-Dq5"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rI-QK-n4m">
+                        <rect key="frame" x="65" y="25" width="35" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ica-Ge-lcD">
+                        <rect key="frame" x="300" y="25" width="60" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="pSf-Zw-IPF"/>
+                        </constraints>
+                        <state key="normal" title="Play"/>
+                        <connections>
+                            <action selector="videoPlayButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fdr-Yj-MQj"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vRA-I0-IOt" secondAttribute="bottom" id="0yS-P5-IIh"/>
+                    <constraint firstAttribute="bottom" secondItem="ica-Ge-lcD" secondAttribute="bottom" constant="25" id="7tE-dQ-Qwq"/>
+                    <constraint firstAttribute="bottom" secondItem="9rI-QK-n4m" secondAttribute="bottom" constant="25" id="D6l-xq-P8O"/>
+                    <constraint firstItem="9rI-QK-n4m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="EGk-MP-eYj"/>
+                    <constraint firstItem="vRA-I0-IOt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EiB-g4-sqm"/>
+                    <constraint firstItem="vRA-I0-IOt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="R73-54-zh6"/>
+                    <constraint firstItem="9rI-QK-n4m" firstAttribute="leading" secondItem="vRA-I0-IOt" secondAttribute="trailing" constant="15" id="bWb-j7-Swh"/>
+                    <constraint firstItem="ica-Ge-lcD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="vVd-Zl-0g8"/>
+                    <constraint firstAttribute="trailing" secondItem="ica-Ge-lcD" secondAttribute="trailing" constant="15" id="zdf-vc-Qno"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="videoImage" destination="vRA-I0-IOt" id="wOk-p7-sIb"/>
+                <outlet property="videoLableName" destination="9rI-QK-n4m" id="3dh-3U-Z0q"/>
+                <outlet property="videoPlayButton" destination="ica-Ge-lcD" id="rnc-49-4H2"/>
+            </connections>
+            <point key="canvasLocation" x="118" y="115"/>
+        </tableViewCell>
+    </objects>
+</document>
