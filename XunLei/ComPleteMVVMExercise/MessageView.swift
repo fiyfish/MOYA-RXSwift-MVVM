@@ -18,17 +18,11 @@ public enum Theme {
 class MessageView: UIView {
     
     static var sharedInstance = MessageView()
-    
     @IBOutlet weak var messageLabel: UILabel!
-    
     @IBOutlet var containerView: UIView!
-    
     var parentView: UIView!
-    
     private var maskingView : UIView!
-
     var hideTimer : Timer!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()

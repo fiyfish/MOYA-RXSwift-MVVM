@@ -104,7 +104,13 @@ class MVVMViewController: UIViewController,UIScrollViewDelegate,UITextFieldDeleg
         
  //通知的书写方法去进行代码验证
         
-        NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).subscribe(onNext: { (notification) in
+        NotificationCenter.default.rx.notification(UIApplication.didEnterBackgroundNotification).subscribe(onNext: { (noticecenter) in
+             
+            print("enter back show")
+            
+            }).disposed(by: disposeBag)
+        
+        NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification).takeUntil(self.rx.deallocated) .subscribe(onNext: { (notification) in
             
             print("enter backView")
             
@@ -112,7 +118,7 @@ class MVVMViewController: UIViewController,UIScrollViewDelegate,UITextFieldDeleg
             
         }, onCompleted: {
             
-         }, onDisposed: nil).disposed(by: disposeBag)
+         }, onDisposed: nil).disposed(by: disposeBag)//takeUntil在页面消失的时候自动移除通知
        //Observer//Observable即使Observer又是Observable这种变量subject
         //对UI时间进行绑定操作如下 homeViewmodl.loading.bind(to:self.rx.isAnimating).disposed(by:disppseBag)true//false只有true/false 通过某个值的变化去绑定某个视图的显示与否去进行动画的显示并最终将结果显示出来
         let helloworld = Observable.just("hello rx world")

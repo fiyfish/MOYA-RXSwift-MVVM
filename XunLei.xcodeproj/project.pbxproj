@@ -24,6 +24,8 @@
 		285FB2DD253D8B9900FD9A42 /* BuildBaseInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285FB2DC253D8B9900FD9A42 /* BuildBaseInfoModel.swift */; };
 		285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285FB2DE253E7C8E00FD9A42 /* listModelExercise.swift */; };
 		285FB2E1253E7E9200FD9A42 /* AutionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285FB2E0253E7E9200FD9A42 /* AutionListModel.swift */; };
+		285FB2E3253EC8FA00FD9A42 /* UIColor+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285FB2E2253EC8FA00FD9A42 /* UIColor+Swift.swift */; };
+		285FB2E5253ECB8300FD9A42 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 285FB2E4253ECB8300FD9A42 /* README.md */; };
 		286406A62533ECFC005F33E1 /* videoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286406A42533ECFC005F33E1 /* videoListTableViewCell.swift */; };
 		286406A72533ECFC005F33E1 /* videoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 286406A52533ECFC005F33E1 /* videoListTableViewCell.xib */; };
 		286406A92533FBCB005F33E1 /* videoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286406A82533FBCB005F33E1 /* videoPlayViewController.swift */; };
@@ -93,6 +95,8 @@
 		285FB2DC253D8B9900FD9A42 /* BuildBaseInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildBaseInfoModel.swift; sourceTree = "<group>"; };
 		285FB2DE253E7C8E00FD9A42 /* listModelExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listModelExercise.swift; sourceTree = "<group>"; };
 		285FB2E0253E7E9200FD9A42 /* AutionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutionListModel.swift; sourceTree = "<group>"; };
+		285FB2E2253EC8FA00FD9A42 /* UIColor+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Swift.swift"; sourceTree = "<group>"; };
+		285FB2E4253ECB8300FD9A42 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		286406A42533ECFC005F33E1 /* videoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoListTableViewCell.swift; sourceTree = "<group>"; };
 		286406A52533ECFC005F33E1 /* videoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = videoListTableViewCell.xib; sourceTree = "<group>"; };
 		286406A82533FBCB005F33E1 /* videoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoPlayViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		2891A7892520350F0044B44D /* XunLei */ = {
 			isa = PBXGroup;
 			children = (
+				285FB2E4253ECB8300FD9A42 /* README.md */,
 				28B17608253972B300D01AE1 /* ComPleteMVVMExercise */,
 				28EB29A625396917005589DA /* MVVMExercise */,
 				286406BF2537E5D7005F33E1 /* Protocol */,
@@ -275,6 +280,7 @@
 				285FB2D8253D7F4800FD9A42 /* listModel.swift */,
 				285FB2DE253E7C8E00FD9A42 /* listModelExercise.swift */,
 				285FB2E0253E7E9200FD9A42 /* AutionListModel.swift */,
+				285FB2E2253EC8FA00FD9A42 /* UIColor+Swift.swift */,
 			);
 			path = ComPleteMVVMExercise;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				285FB2D7253D610A00FD9A42 /* MessageView.xib in Resources */,
 				2891A797252035160044B44D /* LaunchScreen.storyboard in Resources */,
 				286406A72533ECFC005F33E1 /* videoListTableViewCell.xib in Resources */,
+				285FB2E5253ECB8300FD9A42 /* README.md in Resources */,
 				2891A794252035160044B44D /* Assets.xcassets in Resources */,
 				2891A7922520350F0044B44D /* Main.storyboard in Resources */,
 				285FB2C9253D40C700FD9A42 /* LoadingView.xib in Resources */,
@@ -514,6 +521,7 @@
 				286406A92533FBCB005F33E1 /* videoPlayViewController.swift in Sources */,
 				2891A7BD252038760044B44D /* File.swift in Sources */,
 				2891A78F2520350F0044B44D /* ViewController.swift in Sources */,
+				285FB2E3253EC8FA00FD9A42 /* UIColor+Swift.swift in Sources */,
 				285FB2D9253D7F4800FD9A42 /* listModel.swift in Sources */,
 				28B1760725396D6100D01AE1 /* mvvmexercise.swift in Sources */,
 				2891A7BB252036030044B44D /* AVPlayViewController.swift in Sources */,
