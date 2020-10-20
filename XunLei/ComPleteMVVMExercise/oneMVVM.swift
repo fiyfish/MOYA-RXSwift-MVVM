@@ -22,7 +22,7 @@ import SwiftyJSON
 class oneMVVM{
 
     public enum HomeError{
-       case internetError(String)
+           case internetError(String)
        case serverMessage(String)
     }
     //publishSubject<[Album]> = PublishSubject()
