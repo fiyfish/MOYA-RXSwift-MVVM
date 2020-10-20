@@ -152,5 +152,9 @@ extension completeViewController:UITableViewDelegate,UITableViewDataSource{
         return 100;
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("e1eeqeqeqweqeqeq")
+    }
     
 }

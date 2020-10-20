@@ -12,7 +12,7 @@ struct AutionListModel:Codable {
 
     let status:Int
     let message:String
-    let data:[Project]
+    let data:[Datum]
 }
 struct Datum: Codable {
 let sheng, projectID, projectType, status: Int

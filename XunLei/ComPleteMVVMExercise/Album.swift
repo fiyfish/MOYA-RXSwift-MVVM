@@ -5,7 +5,7 @@
 //  Created by abc on 2020/10/19.
 //  Copyright © 2020 abc. All rights reserved.
 //
-
+//数据模型+json转模型即序列化+网络请求+UI布局方法+第三方库的编写+函数式编程书写
 import Foundation
 struct Album: Codable {
     
