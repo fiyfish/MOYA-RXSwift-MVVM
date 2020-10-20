@@ -29,7 +29,7 @@ func HEXCOLOR(_ colorRgb: UInt32) -> UIColor {
     return UIColor.init(red: CGFloat((colorRgb & 0xFF0000) >> 16) / 255, green: CGFloat((colorRgb & 0x00FF00) >> 8) / 255, blue: CGFloat(colorRgb & 0x0000FF) / 255, alpha: 1)
 }
 
-let NAV_BACK_COLOR = HEXCOLOR(0xf4b541)
+let NAV_BACK_COLOR = HEXCOLOR(0xf4b542)
 let NAV_Title_COLOR = HEXCOLOR(0xffffff)
 let VIEW_BACK_COLOR = HEXCOLOR(0xe5e5e5)
 
