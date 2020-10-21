@@ -165,15 +165,28 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
 /*
     一些在工作在序列中的事务 一个Observable就是一个序列包含一些特殊功能其中之一也就是最重要的功能就是OBservables时异步的 是要经过一段时间的发射过程事件可以包含数值/如数字或一个自定义类型的实例也可以是我们公认的手势比如单机
      Observable发生next事物包含元素会一直执行///发送error事物终端或者发送complete事物中断一旦Observable被中断就不会发生事物。
-  
-     
-     
-     
-    
-    
-    
-    
-    
-    
+   Obserable<T>这个类就是RX框架的基础我们可以趁他们为可观察序列它的作用就是可以异步的产生一系列的Event事件即一个OBservable<T>对象会随着时间推移发出event(element:T)这样一个东西
+     而且event还可以携带数据类型它的泛型《T》就是用来指定这个Event携带的数据的类型
+     有了可观察的序列我们还要有一个Obseve订阅者来订阅他这个订阅者才能收到OBservableT不时发出的event
+     通过对事件的监测事件Event定义有3类如下 一个是Element/Error/Completed///case有3类事件处理去完成这个事情。
+     我们可以看到Event就是一个枚举
+     我们可以通过如下几种方法来创建一个 Observable 序列 下面样子我们显示为一个
+     let observable = Observable<Int>.just(5)
+     of()方法接受可变数量的参数必须是同类的参数
+     该方法我们可以接受可变数量的参数必须是同类型的
+     let observable = Observable.of("A","B","C")
+     from()
+     创建可变序列 observable<int>//
+     创建观察者 blindTo/Subscibe就是通过这两种方法去进行对可变序列的观察
+     创建观察者最直接的方法就是在obsevable的Subscribe方法里面直接去描述当前事物发生的方法需要及时做出响应。一般是通过onNext/onError/onCompleted这些闭包构建出来的
+     在bind方法中创建
+     下面代码我们创建一个定时生产所应的Observable序列并将序列不断显示在lable标签上
+     blindTo//Subscribe
+     相比较于这两者的区别
+     blinder有一下2个特征就是最直接去处理UI上事件的
+     一个是不会处理错误事件
+     确保绑定都是在给定的Scheduler即线程上实现的默认是MainScheduler主线程上执行的
+     一旦执行错误事件在调试环境下将执行fatalError在发布环境下将打印错误信息。
+     binder在RxCocoa中的应用其实Rxcocoa中对许多的UI控件进行扩展时就是利用Biner将事件属性编程观察者比如UIcontrol+Rxswift中isEnable就是一个Observe。
 */
 }
