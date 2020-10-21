@@ -11,12 +11,6 @@ import SwiftyJSON
 //在json数据中有很多的modle类型并将值引用在一起去满足开发需求
 /*
  数据模型数据类型展示
- 
- 
- 
- 
- 
- 
  */
 struct BuildBaseInfoModelTwo {
     
