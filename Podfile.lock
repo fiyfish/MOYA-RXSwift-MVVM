@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - Differentiator (4.0.1)
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.2.0)
   - Moya (13.0.1):
@@ -18,6 +19,10 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxDataSources (4.0.1):
+    - Differentiator (~> 4.0)
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -33,6 +38,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - Realm
   - RxCocoa
+  - RxDataSources
   - RxSwift
   - SnapKit
   - SwiftyJSON
@@ -40,6 +46,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Differentiator
     - Kingfisher
     - MBProgressHUD
     - Moya
@@ -49,6 +56,7 @@ SPEC REPOS:
     - Realm
     - Result
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SnapKit
@@ -56,6 +64,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
@@ -65,11 +74,12 @@ SPEC CHECKSUMS:
   Realm: 042bbb59227a0159eda397b8a5a49fbd67495ce7
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 62b5923a0be8e767d4b7783aa9fa979a36aea462
+PODFILE CHECKSUM: 1f3a10d46ee6d4b8adfacdcbcba86dfff0a32781
 
 COCOAPODS: 1.9.3

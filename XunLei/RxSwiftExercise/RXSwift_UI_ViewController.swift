@@ -9,14 +9,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextViewDelegate{
-    let disponseBag = DisposeBag()
+   let disponseBag = DisposeBag()
     var nameTextFeild:UITextField!
     var textView:UITextView!
     var telephone:UITextField!
     var clickButton:UIButton!
     var listTableView:UITableView!
+    let celleIDentider = XiBTableViewCell.self
     var listCollection:UICollectionView!
+    public var tracks = PublishSubject<[Track]>()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -56,6 +59,25 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
         self.view.addSubview(self.textView)
         self.textView.backgroundColor = UIColor.black
         
+        self.listTableView = UITableView.init(frame: CGRect(x: 0, y: 340, width:SCREEN_WIDTH, height:800))
+        self.view.addSubview(self.listTableView)
+        self.listTableView.backgroundColor = UIColor.yellow
+        self.listTableView.rowHeight = 100;
+        self.listTableView.register(UITableViewCell.self, forCellReuseIdentifier:"identifier")
+//tableview
+        
+        getModelData().bind(to: self.listTableView.rx.items(cellIdentifier:"identifier",cellType: UITableViewCell.self)){ (row,Track,cell) in
+            
+           cell.textLabel?.text = Track.name
+            
+        }.disposed(by: disponseBag)
+        
+        self.listTableView.rx.itemSelected.subscribe(onNext: { (next) in
+                 
+          print("111111111")
+                 
+        }).disposed(by: disponseBag)
+        
 //获取编辑的值
         self.nameTextFeild.rx.text.orEmpty.subscribe(onNext: { (text) in
            // print(text)
@@ -73,6 +95,7 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
        editingDidEndOnExit按下return按钮结束编辑
        allEditingEvents包含前面所有编辑相关事件
     */
+    //controlevent////didchange//didScroller//didBeginEditing
       self.nameTextFeild.rx.controlEvent(.editingDidEnd).subscribe(onNext: { (next) in
             
             self.view.backgroundColor = UIColor.white
@@ -128,5 +151,29 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getModelData() -> Observable<[User]>{
 
+        return Observable.just([
+            User(name: "原始密码"),
+            User(name: "新的密码"),
+            User(name: "确认密码")
+            ]
+        )
+
+    }
+/*
+    一些在工作在序列中的事务 一个Observable就是一个序列包含一些特殊功能其中之一也就是最重要的功能就是OBservables时异步的 是要经过一段时间的发射过程事件可以包含数值/如数字或一个自定义类型的实例也可以是我们公认的手势比如单机
+     Observable发生next事物包含元素会一直执行///发送error事物终端或者发送complete事物中断一旦Observable被中断就不会发生事物。
+  
+     
+     
+     
+    
+    
+    
+    
+    
+    
+*/
 }
