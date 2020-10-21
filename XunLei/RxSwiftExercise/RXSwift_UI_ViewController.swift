@@ -30,7 +30,7 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
         self.clickButton.backgroundColor = UIColor.red
         self.clickButton.rx.tap.subscribe(onNext: { (next) in
             
-        print("11111111111")
+            print("11111111111")
             
         }).disposed(by: disponseBag)
         
@@ -65,14 +65,22 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
         self.listTableView.rowHeight = 100;
         self.listTableView.register(UITableViewCell.self, forCellReuseIdentifier:"identifier")
 //tableview
-        
+        //带着数据源的序列bindto列表的cell然后在这里对cell进程操作去满足开发需求
         getModelData().bind(to: self.listTableView.rx.items(cellIdentifier:"identifier",cellType: UITableViewCell.self)){ (row,Track,cell) in
-            
+            //didset
+            //willset的方法进行避免在view中引入model来破环规则
            cell.textLabel?.text = Track.name
             
         }.disposed(by: disponseBag)
+
+/*
+     getModelData().bind(to:self.listTableview.rx.items(cellIdentifier:Identifier,CellType:UItableviewCell.self)){
+        cell.textLable?.text = Track.name
+    }.disponsed(by:disponsedBag)
+         
+*/
         
-        self.listTableView.rx.itemSelected.subscribe(onNext: { (next) in
+self.listTableView.rx.itemSelected.subscribe(onNext: { (next) in
                  
           print("111111111")
                  
@@ -158,10 +166,9 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
             User(name: "原始密码"),
             User(name: "新的密码"),
             User(name: "确认密码")
-            ]
-        )
-
-    }
+            ]//整个数组看作一个数组远行添加到数据中去
+         )
+     }
 /*
     一些在工作在序列中的事务 一个Observable就是一个序列包含一些特殊功能其中之一也就是最重要的功能就是OBservables时异步的 是要经过一段时间的发射过程事件可以包含数值/如数字或一个自定义类型的实例也可以是我们公认的手势比如单机
      Observable发生next事物包含元素会一直执行///发送error事物终端或者发送complete事物中断一旦Observable被中断就不会发生事物。
