@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 //-----------------------UIView------------------//
 
 extension UIView {
@@ -24,7 +22,6 @@ extension UIView {
     }
 }
 //-----------------------UIView------------------//
-
 
 extension UIViewController {
     public func add(asChildViewController viewController: UIViewController,to parentView:UIView) {

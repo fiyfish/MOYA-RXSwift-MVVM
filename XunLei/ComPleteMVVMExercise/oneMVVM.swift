@@ -22,7 +22,7 @@ import SwiftyJSON
 class oneMVVM{
 
     public enum HomeError{
-           case internetError(String)
+       case internetError(String)
        case serverMessage(String)
     }
     //publishSubject<[Album]> = PublishSubject()
@@ -32,11 +32,8 @@ class oneMVVM{
     public let loading : PublishSubject<Bool>  = PublishSubject()
     public let error : PublishSubject<HomeError> = PublishSubject()//声明4个subject去表面这个即使序列又是观察者
     //public let error :PublishSubject<Bool> = PublishSubject()前面半部分是序列//后面半部分是观察者两者一一响应
-    
    private let disposable = DisposeBag()
-    
-    public func requestData(){
-        
+   public func requestData(){
         self.loading.onNext(true)
             APIManager.requestData(url: "dcd86ebedb5e519fd7b09b79dd4e4558/raw/b7505a54339f965413f5d9feb05b67fb7d0e464e/MvvmExampleApi.json", method: .get, parameters: nil, completion: { (result) in
                 self.loading.onNext(false)
@@ -46,8 +43,6 @@ class oneMVVM{
                      从JSON对象解码数据类型实例的对象。jsonDecoder字符串转模型的结构
                      */
                     //let jsonDecoder = JSONDecoder()
-            
-                    
                     
                     //let josnData = JSON(returnJson)
                     

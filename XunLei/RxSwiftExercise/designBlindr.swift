@@ -190,26 +190,4 @@ extension Reactive where Base:UILabel{
  它们之间最大的区别只在与 当一个新的订阅者刚订阅他的时候 能不能收到subjct之前发出的旧的event 如果能的话又能收到几个
  publishSubject 值只能收到订阅后的事件之前的收不到不需要出示值就可以使用这个publishSubject。
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  */
