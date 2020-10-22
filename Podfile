@@ -12,6 +12,6 @@ pod "ReactiveCocoa"
 pod "ReactiveObjC"
 pod "RxSwift"
 pod "RxCocoa"
-pod 'RxDataSources'
+pod "RxDataSources"
 end
 

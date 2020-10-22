@@ -79,6 +79,22 @@ class RXSwift_UI_ViewController: UIViewController,UITextFieldDelegate,UITextView
     }.disponsed(by:disponsedBag)
          
 */
+    //let timer = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+    //timer.map{"\($0)"}.bind(to: self.clickButton.rx.title(for: .normal)).disposed(by: disponseBag)
+//根据索引rx.title绑定到button上链接在一起
+/*
+mySwitch.rx.value.bind(to:UIApplication.share.rx.isNetWorkActivityIndicatorCisible).disposed(by:DisposeBag)
+ switch1.rx.isOn.bind(to:button1.rx.isEnabled).disposed(by:disposeBag)
+        
+*/
+    
+        
+        
+        
+        
+        
+        
+        
         
 self.listTableView.rx.itemSelected.subscribe(onNext: { (next) in
                  
