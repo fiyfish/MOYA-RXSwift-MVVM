@@ -10,11 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 class mvvmexercise: NSObject {
-
+    let dispose = DisposeBag()
     //输出
     let username:Observable<Bool>
     let telePhoname:Observable<Bool>
     let allSure:Observable<Bool>
+    //let dealThig:Observable<Bool>
     init(
        //输入
         userNameText:Observable<String>,
@@ -25,6 +26,16 @@ class mvvmexercise: NSObject {
         username = userNameText.map{$0.count>5}.share(replay:1)
         telePhoname = telphomeText.map{$0.count > 5}.share(replay:1)
         allSure = Observable.combineLatest(username,telePhoname){$0&&$1}.share(replay:1)
+        buttonClick.asObservable().subscribe(onNext: { (next) in
+
+            
+            print("qqqqqqqqq")
+            
+        }).disposed(by: dispose)
         
-    }
+        
+        
+        
+        
+     }
 }

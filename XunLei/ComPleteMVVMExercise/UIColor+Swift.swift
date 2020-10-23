@@ -21,11 +21,11 @@ class throwDescribeType: NSObject {
         case fileISNUll
         case fileNotFound
     }
-    
+    // throw 抛出错误的异常
     func reaFile(filePath:String) throws  -> String {
         
         if filePath == "" {
-           
+            
             throw fileReadError.fileISNUll
         }
         
@@ -34,8 +34,8 @@ class throwDescribeType: NSObject {
             throw fileReadError.fileNotFound
         }
         
-         return "123"
-      }
+        return "123"
+    }
  /*
     抛出异常后也就是异常出现后如何去处理了
      用throwing函数传递错误

@@ -13,6 +13,10 @@ import RxDataSources
 import SwiftyJSON
 class designBlindr: UIViewController {
     let disposeBag = DisposeBag()
+    enum LEER:Error {
+        case oneERROR
+    }
+
     @IBOutlet weak var designButtonClick: UILabel!
     @IBOutlet weak var showSlidewr: UISlider!
     @IBOutlet weak var twoChangeLable: UILabel!
@@ -23,44 +27,136 @@ class designBlindr: UIViewController {
     @IBOutlet weak var firstSecondShow: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-    let urlString = "https://www.douban.com/j/app/radio/channels"
-    let url = URL(string:urlString)
-    //创建请求对象
-    let request = URLRequest(url: url!)
-     
-    //创建并发起请求
-    URLSession.shared.rx.response(request: request).subscribe(onNext: {
-        (response, data) in
-        //数据处理
-        let str = String(data: data, encoding: String.Encoding.utf8)
-        print("返回的数据是：", str ?? "")
-    }).disposed(by: disposeBag)
-   
-    URLSession.shared.rx.response(request: request).subscribe(onNext: {
-            (response, data) in
-            //判断响应结果状态码
-    if 200 ..< 300 ~= response.statusCode {
-    let str = String(data: data, encoding: String.Encoding.utf8)
-     print("请求成功！返回的数据是：", str ?? "")
-     }else{
-     print("请求失败！")
-      }
-   }).disposed(by: disposeBag)
-    
- //创建并发起请求
-  URLSession.shared.rx.data(request: request).subscribe(onNext: {
-            data in
-            let str = String(data: data, encoding: String.Encoding.utf8)
-            print("请求成功！返回的数据是：", str ?? "")
- }).disposed(by: disposeBag)
+       Observable<[String]>.just(["a","b","c"]).subscribe(onNext: { (next) in
+          print(next)
+         }).disposed(by: disposeBag)
         
-URLSession.shared.rx.data(request: request).subscribe(onNext: {
-            data in
-            let str = String(data: data, encoding: String.Encoding.utf8)
-            print("请求成功！返回的数据是：", str ?? "")
-}, onError: { error in
-            print("请求失败！错误原因：", error)
-})
+        Observable<[String]>.of(["a","b","c"]).subscribe(onNext: { (next) in
+          print(next)
+         }).disposed(by: disposeBag)
+        
+        Observable<[String]>.from(["a","b","c"]).subscribe(onNext: { (next) in
+          print(next)
+         }).disposed(by: disposeBag)
+        
+//        Observable<Int>.interval(1, scheduler: MainScheduler.instance).subscribe(onNext: { (next) in
+//
+//            print(next)
+//
+//        }).disposed(by: disposeBag)
+        
+        let ob = Observable<Int>.create { ov in
+            
+            ov.onNext(1)
+            ov.onNext(2)
+            ov.onNext(3)
+            ov.onNext(4)
+            ov.onNext(5)
+            ov.onNext(6)
+            ov.onCompleted()
+            return Disposables.create()
+         }
+//create创建一个新的信号量去进行添加序列操作然后订阅信号量去进行观看事件
+        let twoOb = Observable<Int>.create{ov in
+            ov.onNext(5)
+            ov.onNext(11)
+            ov.onNext(12)
+            ov.onNext(13)
+            ov.onCompleted()
+            return Disposables.create()
+        }
+        ob.subscribe(onNext: { (text) in
+           print(text)
+        }).disposed(by: disposeBag)
+        
+        let observable1 = Observable<String>.create{observer in
+            
+            observer.onNext("hangger.com")
+            
+            observer.onNext("twoComplete")
+            
+            observer.onCompleted()
+            
+            return Disposables.create()
+        }
+        
+        observable1.subscribe(onNext: { (next) in
+            
+        print(next)
+            
+        }).disposed(by: disposeBag)//return Disponsable.create()/
+       /*在这个使用的时候去进行crate在内部添加具体的事件然后返回的时候return Disponsable.create()异步执行队列去进行数据的操作*/
+        let subject = PublishSubject<String>()
+        subject.onNext("12345")
+        subject.subscribe(onNext: { (next) in
+        print(next)
+        }).disposed(by: disposeBag)
+        subject.onNext("67890")
+        subject.onCompleted()//整体完成
+//BehaviorSubjects//publishSubjects 不同点是它会重新发射最晚点的.next事件给新添加的订阅者
+        
+        let beHavioerSubject:BehaviorSubject<String> = BehaviorSubject(value: "onePrint")//初始法必须要有值
+        
+        beHavioerSubject.subscribe(onNext: { (next) in
+
+            print(next)
+       }).disposed(by: disposeBag)
+        
+        beHavioerSubject.onNext("twoPrint")
+        beHavioerSubject.onNext("threePrint")
+        beHavioerSubject.subscribe(onNext: { (next) in
+        print(next)
+        }).disposed(by: disposeBag)
+        beHavioerSubject.onNext("fourPrint")//会发送最上面最新的一个序列事件然后发给用户
+        //ReplaySubjects
+        let subject1 = ReplaySubject<String>.create(bufferSize: 2)
+        //PublishRelay是对publishSubject的封装不会开始也不没有error/complete事件跟publishObject功能一样
+        //behaviorRelay是对behaviorsubject的封装不回开始也不会接回返回的事件一摸一样
+        //subject
+        let variable = Variable("init Variable")
+        variable.value = "eqeqeqe"
+        variable.value = "2"
+        variable.asObservable().subscribe(onNext: { (next) in
+            print(next)
+       }).disposed(by: disposeBag)
+//    let urlString = "https://www.douban.com/j/app/radio/channels"
+//    let url = URL(string:urlString)
+//    //创建请求对象
+//    let request = URLRequest(url: url!)
+//
+//    //创建并发起请求
+//    URLSession.shared.rx.response(request: request).subscribe(onNext: {
+//        (response, data) in
+//        //数据处理
+//        let str = String(data: data, encoding: String.Encoding.utf8)
+//        print("返回的数据是：", str ?? "")
+//    }).disposed(by: disposeBag)
+//
+//    URLSession.shared.rx.response(request: request).subscribe(onNext: {
+//            (response, data) in
+//            //判断响应结果状态码
+//    if 200 ..< 300 ~= response.statusCode {
+//    let str = String(data: data, encoding: String.Encoding.utf8)
+//     print("请求成功！返回的数据是：", str ?? "")
+//     }else{
+//     print("请求失败！")
+//      }
+//   }).disposed(by: disposeBag)
+//
+// //创建并发起请求
+//  URLSession.shared.rx.data(request: request).subscribe(onNext: {
+//            data in
+//            let str = String(data: data, encoding: String.Encoding.utf8)
+//            print("请求成功！返回的数据是：", str ?? "")
+// }).disposed(by: disposeBag)
+//
+//URLSession.shared.rx.data(request: request).subscribe(onNext: {
+//            data in
+//            let str = String(data: data, encoding: String.Encoding.utf8)
+//            print("请求成功！返回的数据是：", str ?? "")
+//}, onError: { error in
+//            print("请求失败！错误原因：", error)
+//})
 /*如果不需要获取底层的 response，只需知道请求是否成功，以及成功时返回的结果，那么建议使用 rx.data。
 因为 rx.data 会自动对响应状态码进行判断，只有成功的响应（状态码为 200~300）才会进入到 onNext 这个回调，否则进入 onError 这个回调。*/
 /*
@@ -86,63 +182,63 @@ let urlString = "https://www.douban.com/j/app/radio/channels"
              }
 }
 */
-   self.dataPicker.rx.date.subscribe(onNext: { (next) in
-            
-    print(next)
-        
-   }).disposed(by: disposeBag)
-        
-    self.ShowWift.rx.isOn.subscribe(onNext: { (next) in//isOn 表示Uiswitch的开发属性
-    print(next)
-    }).disposed(by: disposeBag)
-  //通过设置isNetWorkActicitiyActicityIndicatiorVisable来指明顶部的状态子时期指明活动
-   self.ShowWift.rx.value.bind(to: UIApplication.shared.rx.isNetworkActivityIndicatorVisible).disposed(by: disposeBag)
+//   self.dataPicker.rx.date.subscribe(onNext: { (next) in
+//
+//    print(next)
+//
+//   }).disposed(by: disposeBag)
+//
+//    self.ShowWift.rx.isOn.subscribe(onNext: { (next) in//isOn 表示Uiswitch的开发属性
+//    print(next)
+//    }).disposed(by: disposeBag)
+//  //通过设置isNetWorkActicitiyActicityIndicatiorVisable来指明顶部的状态子时期指明活动
+//   self.ShowWift.rx.value.bind(to: UIApplication.shared.rx.isNetworkActivityIndicatorVisible).disposed(by: disposeBag)
+//
+//    self.firstSecondShow.rx.selectedSegmentIndex.asObservable().subscribe(onNext: { (next) in
+//
+//    print(next)
+//
+//    }).disposed(by: disposeBag)
+//
+//    //点击SelectedSegmentIndex去修改当前
+//    let showImageChange : Observable<UIImage> = self.firstSecondShow.rx.selectedSegmentIndex.asObservable().map{
+//        let images = ["311595233896_.pic_hd","room_门票_sel"]
+//
+//            return UIImage(named: images[$0])!
+//    }
+//        showImageChange.bind(to: self.oneIMageView.rx.image).disposed(by: disposeBag)
+//
+//        self.showSlidewr.rx.value.asObservable().subscribe(onNext: { (next) in
+//
+//            print(next)
+//
+//        }).disposed(by: disposeBag)
+//        self.designButtonClick.textColor = UIColor.black
+//        self.designButtonClick.text = "自定义可绑定属性//即观察者所改变的属性";
+//        self.designButtonClick.font = UIFont.systemFont(ofSize: 0)
+//        let Observablee = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
+//        Observablee.map{CGFloat($0)}.bind(to: designButtonClick.rx.fontSize).disposed(by:disposeBag)
+//        self.twoChangeLable.textColor = UIColor.black
+//        self.twoChangeLable.text = "自定义可绑定属性//即观察者所改变的属性";
+//        self.twoChangeLable.font = UIFont.systemFont(ofSize: 0)
+//        self.twoChangeLable.backgroundColor = UIColor.yellow
+//        let ObserVablethree = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
+//        ObserVablethree.map{CGFloat($0)}.bind(to: twoChangeLable.fontSize).disposed(by:disposeBag)
+//        // Do any additional setup after loading the view.
+//        //stepper值必须要要大于0就是这样去避免出现错误
+//        self.stepper.rx.value.asObservable().subscribe(onNext: { (next) in
+//
+//            print(next)
+//
+//        }).disposed(by: disposeBag)
+//
+//        showSlidewr.rx.value.map{Double($0)}.bind(to: stepper.rx.stepValue).disposed(by: disposeBag)
+//    }
     
-    self.firstSecondShow.rx.selectedSegmentIndex.asObservable().subscribe(onNext: { (next) in
-            
-    print(next)
-            
-    }).disposed(by: disposeBag)
-        
-    //点击SelectedSegmentIndex去修改当前
-    let showImageChange : Observable<UIImage> = self.firstSecondShow.rx.selectedSegmentIndex.asObservable().map{
-        let images = ["311595233896_.pic_hd","room_门票_sel"]
-            
-            return UIImage(named: images[$0])!
-    }
-        showImageChange.bind(to: self.oneIMageView.rx.image).disposed(by: disposeBag)
-        
-        self.showSlidewr.rx.value.asObservable().subscribe(onNext: { (next) in
-        
-            print(next)
-            
-        }).disposed(by: disposeBag)
-        self.designButtonClick.textColor = UIColor.black
-        self.designButtonClick.text = "自定义可绑定属性//即观察者所改变的属性";
-        self.designButtonClick.font = UIFont.systemFont(ofSize: 0)
-        let Observablee = Observable<Int>.interval(0.5, scheduler: MainScheduler.instance)
-        Observablee.map{CGFloat($0)}.bind(to: designButtonClick.rx.fontSize).disposed(by:disposeBag)
-        self.twoChangeLable.textColor = UIColor.black
-        self.twoChangeLable.text = "自定义可绑定属性//即观察者所改变的属性";
-        self.twoChangeLable.font = UIFont.systemFont(ofSize: 0)
-        self.twoChangeLable.backgroundColor = UIColor.yellow
-        let ObserVablethree = Observable<Int>.interval(1, scheduler: MainScheduler.instance)
-        ObserVablethree.map{CGFloat($0)}.bind(to: twoChangeLable.fontSize).disposed(by:disposeBag)
-        // Do any additional setup after loading the view.
-        //stepper值必须要要大于0就是这样去避免出现错误
-        self.stepper.rx.value.asObservable().subscribe(onNext: { (next) in
-            
-            print(next)
-       
-        }).disposed(by: disposeBag)
-        
-        showSlidewr.rx.value.map{Double($0)}.bind(to: stepper.rx.stepValue).disposed(by: disposeBag)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-            //显示等待提示框
-            SwiftNotice.wait()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//            //显示等待提示框
+//            SwiftNotice.wait()
+//    }
 //对UI进行扩展
 
     /*
@@ -154,6 +250,8 @@ let urlString = "https://www.douban.com/j/app/radio/channels"
         // Pass the selected object to the new view controller.
     }
     */
+
+}
 
 }
 //对UI进行扩展

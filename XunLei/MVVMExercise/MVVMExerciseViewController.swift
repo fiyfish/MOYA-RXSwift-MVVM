@@ -16,7 +16,9 @@ import SwiftyJSON
 class MVVMExerciseViewController: UIViewController,UITextFieldDelegate {
     var uitextFeild:UITextField!
     var vmeeer : mvvmexercise!
+    var vm :vmModel!
      let disposeBag = DisposeBag()
+     var changesting:String = ""
     var twoUitextFeild :UITextField!
               override func viewDidLoad() {
               super.viewDidLoad()
@@ -62,10 +64,12 @@ class MVVMExerciseViewController: UIViewController,UITextFieldDelegate {
 
     func blindMVVM() -> Void{
        //初始法以及给指
+        //vm和vc之间的双向绑定 一个是将
         vmeeer = mvvmexercise(userNameText:self.uitextFeild.rx.text.orEmpty.asObservable(), telphomeText: self.twoUitextFeild.rx.text.orEmpty.asObservable(),buttonClick:oAuthLoginButton.rx.tap.asObservable())
-    
-        vmeeer.allSure.bind(to: oAuthLoginButton.rx.isEnabled).disposed(by: disposeBag)
 
+        vmeeer.allSure.bind(to: oAuthLoginButton.rx.isEnabled).disposed(by: disposeBag)
+     
+        
     }
     lazy var oAuthLoginButton: UIButton = {
         
