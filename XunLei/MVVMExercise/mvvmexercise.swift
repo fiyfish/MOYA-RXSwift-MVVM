@@ -35,11 +35,29 @@ class mvvmexercise: NSObject {
     }
 }
 /*
+ var optional1 String? = nil
+ var optional2 String? =.None
+ nil和.None有什么区别 optioanal和optioanal2的变量有何不同
+ 其实没有任何不同 Optioanl.none 下面写法是正确的 nil = .None
+ 请记住在底层下 optional是个枚举类型：
+ enum Optional<T>{
+ case None
+ case some(T)
+}
+ enum Optional<T>{
+ case None
+ case some(T)
+ }
+ //可选值类型None/some（T）
+可选值的底层实现是个枚举类型一个是case None 一个是Some(T)
  import Foundation
  import RxCocoa
  import RxSwift
  import SafariServices
-
+ 在结构体内部函数修改内部状态必须是可变类型数据即用var表明的而不是用let去表明修改函数内部值类型的用var/let去进行值类型表明升级的
+ private只能访问当前数据文件中的实体/swift的文件范围是基于源文件作用于整个源文件如果一个源文件有两个类那个一个类可以访问另一个类的私有成员
+ internal可以访问当前模块中的其他私有实体但是模块外无妨访问默认访问权限//程序中公有中访问权限 private文件内私有低访问权限 public内外公有高访问权限
+ public可以访问模块内和模块外中的任何实体约束
  private let loginURL = URL(string: "http://github.com/login/oauth/authorize?client_id=\(Keys.github.appId)&scope=user+repo+notifications+read:org")!
  private let callbackURLScheme = "swifthub"
 
