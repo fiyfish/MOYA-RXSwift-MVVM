@@ -32,12 +32,7 @@ class mvvmexercise: NSObject {
             print("qqqqqqqqq")
             
         }).disposed(by: dispose)
-        
-        
-        
-        
-        
-     }
+    }
 }
 /*
  import Foundation
@@ -340,6 +335,5 @@ class mvvmexercise: NSObject {
          }).disposed(by: rx.disposeBag)
      }
  }
-
 
  */

@@ -63,6 +63,7 @@
 		28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */; };
 		28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF30FF25415BB50029FA98 /* SwiftNotice.swift */; };
 		28BF31022542A3C60029FA98 /* modelShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31012542A3C60029FA98 /* modelShow.swift */; };
+		28BF31042542C50D0029FA98 /* File12121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31032542C50D0029FA98 /* File12121.swift */; };
 		28EB29A825396939005589DA /* MVVMExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB29A725396939005589DA /* MVVMExerciseViewController.swift */; };
 		2C85E4487F995E2973B3CB91 /* Pods_XunLei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */; };
 /* End PBXBuildFile section */
@@ -149,6 +150,7 @@
 		28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkTelephoneAndSecret.swift; sourceTree = "<group>"; };
 		28BF30FF25415BB50029FA98 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		28BF31012542A3C60029FA98 /* modelShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShow.swift; sourceTree = "<group>"; };
+		28BF31032542C50D0029FA98 /* File12121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12121.swift; sourceTree = "<group>"; };
 		28EB29A725396939005589DA /* MVVMExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExerciseViewController.swift; sourceTree = "<group>"; };
 		BB40E78A9DD8EC75FE02133F /* Pods-XunLei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.debug.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.debug.xcconfig"; sourceTree = "<group>"; };
 		CDDEF667560E1FE3866D4484 /* Pods-XunLei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.release.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.release.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				285FB2DE253E7C8E00FD9A42 /* listModelExercise.swift */,
 				285FB2E0253E7E9200FD9A42 /* AutionListModel.swift */,
 				285FB2E2253EC8FA00FD9A42 /* UIColor+Swift.swift */,
+				28BF31032542C50D0029FA98 /* File12121.swift */,
 			);
 			path = ComPleteMVVMExercise;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				28BF31022542A3C60029FA98 /* modelShow.swift in Sources */,
 				285FB2E7253ECFCB00FD9A42 /* RXSwift_UI_ViewController.swift in Sources */,
 				285FB2DB253D8B6400FD9A42 /* DetailAddressModel.swift in Sources */,
+				28BF31042542C50D0029FA98 /* File12121.swift in Sources */,
 				2891A7BF25205C170044B44D /* LoadVideoViewController.swift in Sources */,
 				285FB2ED253FD30700FD9A42 /* model.swift in Sources */,
 				2891A7CD25217FB00044B44D /* FindController.swift in Sources */,
