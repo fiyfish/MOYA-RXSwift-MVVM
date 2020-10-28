@@ -49,10 +49,19 @@ import SwiftyJSON
  (1),创建模式的值去标记出是否显示出动画/是否动画完成
  (2),将完成之后获取到的数据传递给列表中的值并进行列表刷新的操作
  (3),熟悉rxCocoa中关于uitableviewcell的封装操作最直接去展示最后的效果值去完成开发需求。
+ 在当前屏幕的缓存区域外去开辟另一个缓存区域去进行渲染尽量避免离屏渲染触发丽萍渲染要多次切换上下文以及开辟缓存区域 Gpu能处理的最大纹理尺寸是4096*4096一旦超过这个尺寸就会占有用的Cpu资源进行处理所以纹理要尽量不要超过这个尺寸
+ 减少透明的试图不透明就设置opaque为yes
+尽量避免出现离屏渲染
+出现卡顿的原因就是主线程进行了耗时操作
+ 可以添加observeer到主线程runloop中通过监听runloop状态切换的消耗时间的长短就可以达到监控卡顿的目的。
+ 避免过多的使用autolayout这个过多设置frame会消耗更多的cpu资源。
+ 图片的size最好刚刚和UiimageView的size保持一致
+ 控制一下线程的最大并发数量 避免过多的开辟子线程 子线程也是占用内存结构的
+ 监测卡顿
  */
 class completeViewController: UIViewController {
 
-    let homeViewModel = oneMVVM()
+    var homeViewModel : oneMVVM!
     
     let disposeBag = DisposeBag()
     
@@ -62,11 +71,17 @@ class completeViewController: UIViewController {
     
     var DataArray:NSMutableArray!
     
+    var oneView:UITextField!
+    
     override func viewDidLoad() {
         
       super.viewDidLoad()
         
-      self.view.backgroundColor = UIColor.white
+       self.view.backgroundColor = UIColor.white
+        
+        self.oneView = UITextField.init(frame:CGRect(x: 0, y: 0, width: 10, height: 10))
+        
+        self.view.addSubview(self.oneView)
     
         self.DataArray = NSMutableArray.init()
         
@@ -80,6 +95,8 @@ class completeViewController: UIViewController {
     self.listTableView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGH)
         
         setupBindings()
+        
+        homeViewModel = oneMVVM.init(typeString: self.oneView.rx.text.orEmpty.asObservable())
         
        homeViewModel.requestData()//绑定之后再去请求数据然后进行事件的更新
 

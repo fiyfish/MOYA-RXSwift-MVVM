@@ -22,7 +22,14 @@ class MVVMExerciseViewController: UIViewController,UITextFieldDelegate {
     var twoUitextFeild :UITextField!
               override func viewDidLoad() {
               super.viewDidLoad()
-               self.view.backgroundColor = UIColor.white
+               let a = 1,b = 2.9,c = "string"
+               var da,bd,cd:Int
+               var type:String = "name"
+                var name:String
+                let nameP:String
+                var 傻逼 = "傻逼"//字符串类型知道类型展示数据
+                //声明变量和常量可以有出事值也可以没有但是必须指定其类型 swift是一门类型安全语言
+                self.view.backgroundColor = UIColor.white
                self.uitextFeild = UITextField.init()
                self.view.addSubview(self.uitextFeild)
                self.uitextFeild.backgroundColor = UIColor.purple

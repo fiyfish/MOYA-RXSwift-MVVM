@@ -63,6 +63,14 @@
 		28B1760725396D6100D01AE1 /* mvvmexercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760625396D6100D01AE1 /* mvvmexercise.swift */; };
 		28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B17609253972DE00D01AE1 /* completeViewController.swift */; };
 		28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */; };
+		28B4B2242546B90F000ACF0A /* SwiftLearnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B2222546B90F000ACF0A /* SwiftLearnViewController.swift */; };
+		28B4B2252546B90F000ACF0A /* SwiftLearnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B2232546B90F000ACF0A /* SwiftLearnViewController.xib */; };
+		28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B227254813D8000ACF0A /* TwoViewController.m */; };
+		28B4B22F25490772000ACF0A /* OneDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B22D25490772000ACF0A /* OneDayViewController.swift */; };
+		28B4B23025490772000ACF0A /* OneDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B22E25490772000ACF0A /* OneDayViewController.xib */; };
+		28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23225494C26000ACF0A /* twoShowViewController.swift */; };
+		28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B23325494C26000ACF0A /* twoShowViewController.xib */; };
+		28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23625494C79000ACF0A /* showViewAgain.swift */; };
 		28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF30FF25415BB50029FA98 /* SwiftNotice.swift */; };
 		28BF31022542A3C60029FA98 /* modelShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31012542A3C60029FA98 /* modelShow.swift */; };
 		28BF31042542C50D0029FA98 /* File12121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31032542C50D0029FA98 /* File12121.swift */; };
@@ -152,6 +160,15 @@
 		28B1760625396D6100D01AE1 /* mvvmexercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvmexercise.swift; sourceTree = "<group>"; };
 		28B17609253972DE00D01AE1 /* completeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completeViewController.swift; sourceTree = "<group>"; };
 		28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkTelephoneAndSecret.swift; sourceTree = "<group>"; };
+		28B4B2222546B90F000ACF0A /* SwiftLearnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftLearnViewController.swift; sourceTree = "<group>"; };
+		28B4B2232546B90F000ACF0A /* SwiftLearnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwiftLearnViewController.xib; sourceTree = "<group>"; };
+		28B4B226254813D8000ACF0A /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		28B4B227254813D8000ACF0A /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		28B4B22D25490772000ACF0A /* OneDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayViewController.swift; sourceTree = "<group>"; };
+		28B4B22E25490772000ACF0A /* OneDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneDayViewController.xib; sourceTree = "<group>"; };
+		28B4B23225494C26000ACF0A /* twoShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoShowViewController.swift; sourceTree = "<group>"; };
+		28B4B23325494C26000ACF0A /* twoShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = twoShowViewController.xib; sourceTree = "<group>"; };
+		28B4B23625494C79000ACF0A /* showViewAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showViewAgain.swift; sourceTree = "<group>"; };
 		28BF30FF25415BB50029FA98 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		28BF31012542A3C60029FA98 /* modelShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShow.swift; sourceTree = "<group>"; };
 		28BF31032542C50D0029FA98 /* File12121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12121.swift; sourceTree = "<group>"; };
@@ -192,6 +209,10 @@
 			children = (
 				285BB40325466A1800EECA2F /* videoPlayViewControllerd.swift */,
 				285BB40425466A1800EECA2F /* videoPlayViewController.xib */,
+				28B4B2222546B90F000ACF0A /* SwiftLearnViewController.swift */,
+				28B4B2232546B90F000ACF0A /* SwiftLearnViewController.xib */,
+				28B4B226254813D8000ACF0A /* TwoViewController.h */,
+				28B4B227254813D8000ACF0A /* TwoViewController.m */,
 			);
 			path = AVPlayer;
 			sourceTree = "<group>";
@@ -246,6 +267,8 @@
 		2891A7892520350F0044B44D /* XunLei */ = {
 			isa = PBXGroup;
 			children = (
+				28B4B23125494C03000ACF0A /* groupExercise */,
+				28B4B229254906EF000ACF0A /* Grooup Seven */,
 				285BB402254669F600EECA2F /* AVPlayer */,
 				28B17608253972B300D01AE1 /* ComPleteMVVMExercise */,
 				28EB29A625396917005589DA /* MVVMExercise */,
@@ -320,6 +343,25 @@
 				28BF31032542C50D0029FA98 /* File12121.swift */,
 			);
 			path = ComPleteMVVMExercise;
+			sourceTree = "<group>";
+		};
+		28B4B229254906EF000ACF0A /* Grooup Seven */ = {
+			isa = PBXGroup;
+			children = (
+				28B4B22D25490772000ACF0A /* OneDayViewController.swift */,
+				28B4B22E25490772000ACF0A /* OneDayViewController.xib */,
+			);
+			path = "Grooup Seven";
+			sourceTree = "<group>";
+		};
+		28B4B23125494C03000ACF0A /* groupExercise */ = {
+			isa = PBXGroup;
+			children = (
+				28B4B23225494C26000ACF0A /* twoShowViewController.swift */,
+				28B4B23325494C26000ACF0A /* twoShowViewController.xib */,
+				28B4B23625494C79000ACF0A /* showViewAgain.swift */,
+			);
+			path = groupExercise;
 			sourceTree = "<group>";
 		};
 		28BF73442531A021008F1BCE /* MOYA */ = {
@@ -468,12 +510,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				285FB2D7253D610A00FD9A42 /* MessageView.xib in Resources */,
+				28B4B23025490772000ACF0A /* OneDayViewController.xib in Resources */,
 				2891A797252035160044B44D /* LaunchScreen.storyboard in Resources */,
 				285FB2EB253FCC5700FD9A42 /* XiBTableViewCell.xib in Resources */,
+				28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */,
 				285BB40625466A1800EECA2F /* videoPlayViewController.xib in Resources */,
 				286406A72533ECFC005F33E1 /* videoListTableViewCell.xib in Resources */,
 				2891A794252035160044B44D /* Assets.xcassets in Resources */,
 				2891A7922520350F0044B44D /* Main.storyboard in Resources */,
+				28B4B2252546B90F000ACF0A /* SwiftLearnViewController.xib in Resources */,
 				285FB2F125400B9100FD9A42 /* designBlindr.xib in Resources */,
 				285FB2C9253D40C700FD9A42 /* LoadingView.xib in Resources */,
 			);
@@ -554,6 +599,7 @@
 				285FB2BF253D355500FD9A42 /* oneMVVM.swift in Sources */,
 				2891A7CB25217F9D0044B44D /* MailListViewController.swift in Sources */,
 				285FB2D3253D5D7100FD9A42 /* ReactiveExtensiones.swift in Sources */,
+				28B4B22F25490772000ACF0A /* OneDayViewController.swift in Sources */,
 				28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */,
 				286406BE2536E440005F33E1 /* PeopleSHow.swift in Sources */,
 				285FB2CF253D43BC00FD9A42 /* Network.swift in Sources */,
@@ -571,14 +617,17 @@
 				2891A7C725217F630044B44D /* tabBarController.swift in Sources */,
 				285FB2DD253D8B9900FD9A42 /* BuildBaseInfoModel.swift in Sources */,
 				286406AD25354F31005F33E1 /* netShow.swift in Sources */,
+				28B4B2242546B90F000ACF0A /* SwiftLearnViewController.swift in Sources */,
 				28EB29A825396939005589DA /* MVVMExerciseViewController.swift in Sources */,
 				2891A7C925217F8C0044B44D /* HomeController.swift in Sources */,
 				2891A78B2520350F0044B44D /* AppDelegate.swift in Sources */,
 				2891A811252193400044B44D /* TTUtil.swift in Sources */,
 				285FB2E1253E7E9200FD9A42 /* AutionListModel.swift in Sources */,
 				285FB2CB253D40C700FD9A42 /* LoadingViewable.swift in Sources */,
+				28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */,
 				28BF31022542A3C60029FA98 /* modelShow.swift in Sources */,
 				285FB2E7253ECFCB00FD9A42 /* RXSwift_UI_ViewController.swift in Sources */,
+				28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */,
 				285FB2DB253D8B6400FD9A42 /* DetailAddressModel.swift in Sources */,
 				28BF31042542C50D0029FA98 /* File12121.swift in Sources */,
 				2891A7BF25205C170044B44D /* LoadVideoViewController.swift in Sources */,
@@ -586,6 +635,7 @@
 				2891A7CD25217FB00044B44D /* FindController.swift in Sources */,
 				285FB2EA253FCC5700FD9A42 /* XiBTableViewCell.swift in Sources */,
 				2891A8192521E13C0044B44D /* PublicObj.m in Sources */,
+				28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */,
 				285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */,
 				2891A80F25218ED70044B44D /* SceneDelegate.swift in Sources */,
 				28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */,

@@ -52,11 +52,10 @@ class ViewController: UIViewController,protoShow {
 //下载按钮的操作
 @objc func beginLoad()
  {
-    let vc  = videoPlayViewControllerd.init()
+    let vc  = twoShowViewController.init()
    // vc.delegate = self
      vc.modalPresentationStyle = .fullScreen;
-    
-    self .present(vc, animated: true, completion: nil)
+     self .present(vc, animated: true, completion: nil)
 }
     
     func dosSome(cell: videoListTableViewCell)->Void{

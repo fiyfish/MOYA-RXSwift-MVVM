@@ -20,7 +20,7 @@ import SwiftyJSON
  BehaviorSubjects 只会输出最新添加的一个元素并在error/complish完成不再执行任何的操作
  */
 class oneMVVM{
-
+//这里没有初始法的方法即没有init方法所以要给生成的变量一个开始值然后在这个值里面进行数据处理去满足开发需求
     public enum HomeError{
        case internetError(String)
        case serverMessage(String)
@@ -30,9 +30,17 @@ class oneMVVM{
     public let albums : PublishSubject<[Album]> = PublishSubject()
     public let tracks : PublishSubject<[Track]> = PublishSubject()
     public let loading : PublishSubject<Bool>  = PublishSubject()
+    public let showView : PublishSubject<[Int]> = PublishSubject()
+    public let typeString:Observable<String>
     public let error : PublishSubject<HomeError> = PublishSubject()//声明4个subject去表面这个即使序列又是观察者
     //public let error :PublishSubject<Bool> = PublishSubject()前面半部分是序列//后面半部分是观察者两者一一响应
    private let disposable = DisposeBag()
+    
+    init(typeString:Observable<String>) {
+        
+        self.typeString = typeString
+    }
+    //.filter{!$0.isEmpty}.flatMapLatest
    public func requestData(){
         self.loading.onNext(true)
             APIManager.requestData(url: "dcd86ebedb5e519fd7b09b79dd4e4558/raw/b7505a54339f965413f5d9feb05b67fb7d0e464e/MvvmExampleApi.json", method: .get, parameters: nil, completion: { (result) in
@@ -69,7 +77,32 @@ class oneMVVM{
         
    }
 /*
+flapMap
+
+ 将序列的元素转换为其他序列， 就很适合a序列转换为b序列，比如
+ 输入类型/序列， 输出序列
+ flapMapLatest
+ 和flapMap相似，不同的是只发出最新元素
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ */
+/*
  throws抛出的异常必须要通过try来处理
+ throws
+ try?
+ trycatch
+ try{
+ }catch{
+ }try!/
  try标准的处理方式改方式要结合do catch来处理
  try？告诉系统可能回出错 出错返回nil 不出错返回一个可选值返回给我们
  try!告诉系统一定没错如果发生错误程序回崩溃不推荐使用 这些都是对方法throws的一个处理 有throws必有try 当然
