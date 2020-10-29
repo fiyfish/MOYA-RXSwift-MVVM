@@ -20,24 +20,24 @@ class twoShowViewController: UIViewController {
         //self.DispatchQueueTest()
         //self.twoTest()
         //self.dealWithTest()
-        //创建一个串型队列执行异步任务 执行同步任务//不要在主列队中执行同步任务，这样会造成死锁问题 不要在主线程执行同步任务这样会死锁的呀
+        //创建一个串型队列执行异步任务 执行同步任务//不要在主列队中执行同步任务，这样会造成死锁问题 不要在主线程执行同步任务这样会死锁的呀线程死锁
+        let delay = DispatchTime.now() + 10
+        DispatchQueue.main.asyncAfter(deadline: delay) {
+            // 延迟执行
+        }
         let queue = DispatchQueue(label: "1313131213131")
-         
-         queue.sync {
-        
-            print("12121212121")
-        }
-        
+        let queue1 = DispatchQueue(label: "eqeqeqeqeqeqweq")//默认是串型队列
+        let queue2 = DispatchQueue.global()
+        let queue3 = DispatchQueue.main
         queue.sync {
-            
-            print("eeqeqeqeqeqweq")
+         print("12121212121")
         }
-        
         queue.sync {
-            
-            print("eqeqeqeqewqeqeqw")
-            
+          print("eeqeqeqeqeqweq")
         }
+        queue.sync {
+           print("eqeqeqeqewqeqeqw")
+         }
         
 //        self.oneShow = vmModelShow.init(textPusblish:self.inputTextView.rx.text.orEmpty.asObservable())
 //        self.oneShow.showEnd.subscribe(onNext: { (text) in
