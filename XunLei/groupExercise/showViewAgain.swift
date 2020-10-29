@@ -15,6 +15,25 @@ class vmModelShow: NSObject {
 //   init(textPusblish:Observable<String>) {
 //   showEnd = textPusblish.map{"e"+$0+"e"}.share(replay:1)
 //}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
    let pageshow:Driver<String>
     

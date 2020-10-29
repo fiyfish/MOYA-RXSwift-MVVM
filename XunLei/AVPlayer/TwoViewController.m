@@ -8,7 +8,7 @@
 
 #import "TwoViewController.h"
 static  const CFTimeInterval duration = 3.0;
-@interface TwoViewController ()
+@interface TwoViewController ()<NSURLSessionDataDelegate>
 @property(nonatomic,strong) CABasicAnimation * animation;
 @property(nonatomic,strong)UIImageView *grayHeadImgView;
 /** green */
@@ -19,6 +19,75 @@ static  const CFTimeInterval duration = 3.0;
 @implementation TwoViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //一个网络请求的地址range 范围 Content—length///Content-length
+    NSURL * url = [NSURL URLWithString:@"http://api.nohttp.net/method?name=yanzhenjie&pwd=123"];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:10.0];
+    [request addValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
+    //或者用下面这种方式添加所有请求头信息
+    request.allHTTPHeaderFields = @{@"Content-Encoding":@"gzip"};
+    [request setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    //NSURLSession * shredSesson = [NSURLSession sharedSession]; apple会提供session
+    NSURLSessionConfiguration * configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession * session = [NSURLSession sessionWithConfiguration:configuration];
+    configuration.timeoutIntervalForRequest = 10;//设置请求超时时间10分钟
+    configuration.allowsCellularAccess = NO;//在蜂窝情况下是否继续上传下载
+    configuration.HTTPAdditionalHeaders = @{@"Content-Encoding":@"gzip"};
+    NSURLSessionDataTask * task = [session dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+     id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        printf("%s", object);
+    }];
+//[uploadTask resume]; 文件上传 下载以及恢复线程 启动任务去进行任务的操作
+/*
+ NSSessionTask一般有4种下列情况 NSURLSesionDataTask//一般的get post等请求
+ NSURLSessionUploadTak//用于上传文件或者数据量比较大的请求
+ NSURLSessionDownloadTask//用于下载文件或者数据量比较大的请求
+NSURLSessionStreamTask//建立一个TCp//IP连接的主机名和端口或一个网络服务对象
+ task的三个函数///第一个 suspend 暂停/resume 开始或者恢复///cancle 关闭任务
+ */
+//pose请求
+    NSURL * ur = [NSURL URLWithString:@"http://api.nohttp.net/postBody"];
+    NSMutableURLRequest * request1 = [NSMutableURLRequest requestWithURL:url];
+    [request1 setTimeoutInterval:10.0];
+    [request1 setHTTPMethod:@"POST"];
+    [request1 addValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
+    NSDictionary *parametersDict = @{@"name":@"yanzhenjie",@"pwd":@"123"};NSMutableString *parameterString = [[NSMutableString alloc]init];
+    int pos =0;
+    for (NSString *key in parametersDict.allKeys) {
+        // 拼接字符串
+        [parameterString appendFormat:@"%@=%@", key, parametersDict[key]];
+        if(pos<parametersDict.allKeys.count-1){
+            [parameterString appendString:@"&"];
+        }
+        pos++;
+    }
+     NSData *parametersData = [parameterString dataUsingEncoding:NSUTF8StringEncoding];
+    [request setHTTPBody:parametersData];
+      NSURLSessionConfiguration *configuration1 = [NSURLSessionConfiguration defaultSessionConfiguration];
+     NSURLSession *session1 = [NSURLSession sessionWithConfiguration:configuration1];
+    NSURLSessionDataTask * task1 = [session dataTaskWithURL:ur completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+    id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        
+    }];
+    
+    [task1 resume];//在这里去执行任务去进行代码的开发
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //在layer层级上添加一个核心动画一般绘制动画用的是贝塞尔曲线+cashaper描点+cabasicanimatoin进行绘制过程中的动画
     self.view.backgroundColor = UIColor.whiteColor;
         CGFloat imgWH = 60;

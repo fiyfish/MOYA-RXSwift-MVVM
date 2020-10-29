@@ -58,6 +58,20 @@ import SwiftyJSON
  图片的size最好刚刚和UiimageView的size保持一致
  控制一下线程的最大并发数量 避免过多的开辟子线程 子线程也是占用内存结构的
  监测卡顿
+ 一般通过监测主线程的runloop的进入和离开的方法来进行监听判断执行任务的时间是否超过16ms这样就可以去判断当前这个主线程是否卡动如果卡动获取其当前执行的堆栈信息然后还原出来当时执行的方法就可以找到卡动的根源。堆栈的符号化获取到当前的堆栈信息然后对堆栈信息进行符号化可以获取到当前的方法。多次连续小卡顿和单次长时间卡顿两种情景多次连续小卡懂和单次长时间卡动两种情况。
+ 死锁
+ 抢锁
+ 大量IO操作
+ 大量计算
+ 大量ui绘制等等
+ 怎么知道主线程发生了卡顿？
+ 子线程以什么样的策略和频率来检测主线程？这个是要发布到现网的，如果处理不好，带来明显的性能损耗（尤其是电量），就不能接受了
+ 堆栈上报了上来怎么分类？直接用 crash report 的分类不适合
+ 卡顿 dump 下来的堆栈会有多频繁？数据量会有多大
+ 全量上报还是抽样上报？怎么在问题跟进与节省流量直接平衡
+ fps 大于60
+ CPU 占用超过了100%
+ 主线程 Runloop 执行了超过2秒
  */
 class completeViewController: UIViewController {
 
@@ -75,9 +89,10 @@ class completeViewController: UIViewController {
     
     override func viewDidLoad() {
         
-      super.viewDidLoad()
+        super.viewDidLoad()
         
-       self.view.backgroundColor = UIColor.white
+    
+        self.view.backgroundColor = UIColor.white
         
         self.oneView = UITextField.init(frame:CGRect(x: 0, y: 0, width: 10, height: 10))
         
@@ -91,14 +106,15 @@ class completeViewController: UIViewController {
         
         self.listTableView.delegate = self;
         
-    self.listTableView.dataSource = self
-    self.listTableView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGH)
+        self.listTableView.dataSource = self
+      
+        self.listTableView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGH)
         
         setupBindings()
         
         homeViewModel = oneMVVM.init(typeString: self.oneView.rx.text.orEmpty.asObservable())
         
-       homeViewModel.requestData()//绑定之后再去请求数据然后进行事件的更新
+        homeViewModel.requestData()//绑定之后再去请求数据然后进行事件的更新
 
         // Do any additional setup after loading the view.
     }
