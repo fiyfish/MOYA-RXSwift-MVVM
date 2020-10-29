@@ -20,12 +20,19 @@ class twoShowViewController: UIViewController {
         //self.DispatchQueueTest()
         //self.twoTest()
         //self.dealWithTest()
+        //同步栅栏和异步栅栏都能够阻塞队列上的任务,但是最大的区别在于能否阻塞当前线程 同步栅栏异步栅栏能够阻塞队列任务
         //创建一个串型队列执行异步任务 执行同步任务//不要在主列队中执行同步任务，这样会造成死锁问题 不要在主线程执行同步任务这样会死锁的呀线程死锁
         let delay = DispatchTime.now() + 10
         DispatchQueue.main.asyncAfter(deadline: delay) {
             // 延迟执行
         }
-        let queue = DispatchQueue(label: "1313131213131")
+        //线程数大于核数两倍的时候会比较耗性能 现场数量大于内核数目2倍的时候会消耗大量的性能所以不这样去写
+        //信号量并发执行5次
+        DispatchQueue.concurrentPerform(iterations: 5) {
+            print("\($0)")
+        }
+        //同步队列 异步队列任务
+        let queue = DispatchQueue(label: "1313131213131")//同步围栏和异步围栏的围栏效果操作是为了一些读写操作的安全性
         let queue1 = DispatchQueue(label: "eqeqeqeqeqeqweq")//默认是串型队列
         let queue2 = DispatchQueue.global()
         let queue3 = DispatchQueue.main
