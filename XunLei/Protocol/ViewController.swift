@@ -17,7 +17,7 @@ class ViewController: UIViewController,protoShow {
     var lable:UILabel!
     var oneShow:testLeaks!
     var videoListShow:UITableView!
-    let name:Array = ["大主宰121212112","雪山飞狐","碧血剑","环太平洋3之我去打外星怪兽","环太平洋2之怪兽我来了","我和我的祖国","我和我的家乡","一点回家","姜子牙","大鱼海棠"]
+    let name:Array = ["大主宰","雪山飞狐","碧血剑","环太平洋3之我去打外星怪兽","环太平洋2之怪兽我来了","我和我的祖国","我和我的家乡","一点回家","姜子牙","大鱼海棠"]
     //颜色获取(定义方法)
     
     override func viewDidLoad() {
