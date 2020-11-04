@@ -21,6 +21,11 @@ class vmModelShow: NSObject {
     //回滚测试10
     //回滚测试11
     //回滚测试12
+    //112122112
+    //212121221
+    //212121121
+    //1212121112
+    //212121221
     let pageshow:Driver<String>
    //let twoPageShow:Driver<String>//声明twoPageShow:Driver<String>需要去初始化对象
    init(oneShow:Driver<String>) {
