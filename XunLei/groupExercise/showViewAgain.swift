@@ -36,6 +36,7 @@ class vmModelShow: NSObject {
     //git使用流程 第一步先拉去服务器上面的版本代码
     //第二部提交本地的服务器代码看一下有没有冲突如果有解决掉冲突问题
     //第三种本地编译一下如果没有问题修改问题最后把项目推到服务器上面去1212121121
+    //tag一般在开发过程中起到标记的作用在标记的时候去标记版本的v1.0以及特殊重要的时刻去进行代码的标记展示我们想要展示的数据版本
     let pageshow:Driver<String>
    //let twoPageShow:Driver<String>//声明twoPageShow:Driver<String>需要去初始化对象
    init(oneShow:Driver<String>) {
