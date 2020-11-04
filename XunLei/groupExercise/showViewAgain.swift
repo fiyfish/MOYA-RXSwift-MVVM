@@ -18,6 +18,9 @@ class vmModelShow: NSObject {
     //回滚测试1
     //回滚测试2
     //回滚测试3
+    //回滚测试4
+    //回滚测试5
+    //回滚测试6
     let pageshow:Driver<String>
    //let twoPageShow:Driver<String>//声明twoPageShow:Driver<String>需要去初始化对象
    init(oneShow:Driver<String>) {
