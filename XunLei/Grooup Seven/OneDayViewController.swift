@@ -14,6 +14,7 @@ class OneDayViewController: UIViewController {
        
         case north = "像素混合"
         case south = "离屏渲染"
+        case east = "onebyoneShow"
     }
     override func viewDidLoad() {
         super.viewDidLoad()
