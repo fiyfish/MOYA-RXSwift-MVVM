@@ -35,7 +35,7 @@ class vmModelShow: NSObject {
     //操作规范
     //git使用流程 第一步先拉去服务器上面的版本代码
     //第二部提交本地的服务器代码看一下有没有冲突如果有解决掉冲突问题
-    //第三种本地编译一下如果没有问题修改问题最后把项目推到服务器上面去1212121
+    //第三种本地编译一下如果没有问题修改问题最后把项目推到服务器上面去1212121121
     let pageshow:Driver<String>
    //let twoPageShow:Driver<String>//声明twoPageShow:Driver<String>需要去初始化对象
    init(oneShow:Driver<String>) {
