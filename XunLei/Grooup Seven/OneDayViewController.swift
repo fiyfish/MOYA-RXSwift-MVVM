@@ -15,7 +15,7 @@ class OneDayViewController: UIViewController {
         case north = "像素混合"
         case south = "离屏渲染"
         case east = "onebyoneShow"
-    }
+    }//代码的创建以及分支的何必与处理并将这些混合在一起git
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "UI层级的性能优化";
