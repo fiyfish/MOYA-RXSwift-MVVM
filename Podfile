@@ -13,5 +13,6 @@ pod "ReactiveObjC"
 pod "RxSwift"
 pod "RxCocoa"
 pod "RxDataSources"
+pod 'MLeaksFinder'
 end
 

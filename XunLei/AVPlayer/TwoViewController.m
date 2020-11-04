@@ -7,19 +7,38 @@
 //
 
 #import "TwoViewController.h"
+typedef void(^block)();
 static  const CFTimeInterval duration = 3.0;
+
 @interface TwoViewController ()<NSURLSessionDataDelegate>
 @property(nonatomic,strong) CABasicAnimation * animation;
 @property(nonatomic,strong)UIImageView *grayHeadImgView;
+@property (copy, nonatomic) block myBlock;  // 2
 /** green */
 @property(nonatomic,strong)UIImageView *greenHeadImgView;
 @property (nonatomic, strong) CAShapeLayer *maskLayerUp;
 @property (nonatomic, strong) CAShapeLayer *maskLayerDown;
+@property(nonatomic,strong)NSTimer *timer;
 @end
 @implementation TwoViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+//使用__weak打破循环的方法只在ARC下才有效，在MRC下应该使用__block
+//双向持有对象self.block里面再去调用self这次就会造城循环引用的效果
+    __weak typeof(self) weakSelf = self;
     //一个网络请求的地址range 范围 Content—length///Content-length
+    self.myBlock = ^() {
+        //其实注释中的代码，同样会造成循环引用
+        weakSelf.view.backgroundColor = [UIColor blueColor]; // 1
+          //NSString *localString = _blockString;
+          //[self doSomething];
+    };
+    UIButton * oneBUtton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 100)];
+    [self.view addSubview:oneBUtton];
+    oneBUtton.backgroundColor = [UIColor purpleColor];
+    [oneBUtton addTarget:self action:@selector(clickUPShowView) forControlEvents:UIControlEventTouchUpInside];
+    //    _timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+//    [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
     NSURL * url = [NSURL URLWithString:@"http://api.nohttp.net/method?name=yanzhenjie&pwd=123"];
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
@@ -47,32 +66,32 @@ NSURLSessionStreamTask//建立一个TCp//IP连接的主机名和端口或一个�
  task的三个函数///第一个 suspend 暂停/resume 开始或者恢复///cancle 关闭任务
  */
 //pose请求
-    NSURL * ur = [NSURL URLWithString:@"http://api.nohttp.net/postBody"];
-    NSMutableURLRequest * request1 = [NSMutableURLRequest requestWithURL:url];
-    [request1 setTimeoutInterval:10.0];
-    [request1 setHTTPMethod:@"POST"];
-    [request1 addValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
-    NSDictionary *parametersDict = @{@"name":@"yanzhenjie",@"pwd":@"123"};NSMutableString *parameterString = [[NSMutableString alloc]init];
-    int pos =0;
-    for (NSString *key in parametersDict.allKeys) {
-        // 拼接字符串
-        [parameterString appendFormat:@"%@=%@", key, parametersDict[key]];
-        if(pos<parametersDict.allKeys.count-1){
-            [parameterString appendString:@"&"];
-        }
-        pos++;
-    }
-     NSData *parametersData = [parameterString dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPBody:parametersData];
-      NSURLSessionConfiguration *configuration1 = [NSURLSessionConfiguration defaultSessionConfiguration];
-     NSURLSession *session1 = [NSURLSession sessionWithConfiguration:configuration1];
-    NSURLSessionDataTask * task1 = [session dataTaskWithURL:ur completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-    id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-        
-    }];
-    
-    [task1 resume];//在这里去执行任务去进行代码的开发
+//    NSURL * ur = [NSURL URLWithString:@"http://api.nohttp.net/postBody"];
+//    NSMutableURLRequest * request1 = [NSMutableURLRequest requestWithURL:url];
+//    [request1 setTimeoutInterval:10.0];
+//    [request1 setHTTPMethod:@"POST"];
+//    [request1 addValue:@"gzip" forHTTPHeaderField:@"Content-Encoding"];
+//    NSDictionary *parametersDict = @{@"name":@"yanzhenjie",@"pwd":@"123"};NSMutableString *parameterString = [[NSMutableString alloc]init];
+//    int pos =0;
+//    for (NSString *key in parametersDict.allKeys) {
+//        // 拼接字符串
+//        [parameterString appendFormat:@"%@=%@", key, parametersDict[key]];
+//        if(pos<parametersDict.allKeys.count-1){
+//            [parameterString appendString:@"&"];
+//        }
+//        pos++;
+//    }
+//     NSData *parametersData = [parameterString dataUsingEncoding:NSUTF8StringEncoding];
+//    [request setHTTPBody:parametersData];
+//      NSURLSessionConfiguration *configuration1 = [NSURLSessionConfiguration defaultSessionConfiguration];
+//     NSURLSession *session1 = [NSURLSession sessionWithConfiguration:configuration1];
+//    NSURLSessionDataTask * task1 = [session dataTaskWithURL:ur completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//
+//    id object = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+//
+//    }];
+//
+//    [task1 resume];//在这里去执行任务去进行代码的开发
     
     
     
@@ -154,6 +173,9 @@ NSURLSessionStreamTask//建立一个TCp//IP连接的主机名和端口或一个�
     layer.strokeEnd = 1;
     [layer addAnimation:animation forKey:@"strokeEndAnimation"];
 }
+- (void)updateTimer {
+    NSLog(@"%s",__func__);
+}
 - (CAShapeLayer *)createShapeLayerNoFrame:(UIColor *)color
 {
     CAShapeLayer *layer = [CAShapeLayer layer];
@@ -189,6 +211,14 @@ NSURLSessionStreamTask//建立一个TCp//IP连接的主机名和端口或一个�
     [mask addSublayer:self.maskLayerDown];
     
     return mask;
+}
+-(void)clickUPShowView
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+-(void)dealloc
+{
+    NSLog(@"dealloc");
 }
 //UI层 UI层级别的优化 动画 列表 分组元素
 //网络层 网络数据的获取//不同数据的区别

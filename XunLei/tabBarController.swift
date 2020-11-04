@@ -10,7 +10,7 @@ import UIKit
 
 class tabBarController: UITabBarController {
   
-    private let  homePage = HomeController()
+    private let  homePage = ViewController()
     
     private let  scenePage = MailListViewController()
     
@@ -43,7 +43,7 @@ class tabBarController: UITabBarController {
            myPage.tabBarItem.selectedImage     = UIImage.init(named: "")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
           //设置文字标题颜色和大小
            UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.orange,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)], for: .normal)
-           UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)], for: .selected)
+           UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.green,NSAttributedString.Key.font:UIFont.systemFont(ofSize: 15)], for: .selected)
            self.viewControllers = [homePage,scenePage,findPage,devicePage,myPage]
        
     }

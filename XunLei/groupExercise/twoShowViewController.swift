@@ -9,17 +9,19 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SnapKit
 class twoShowViewController: UIViewController {
     let disposeBage = DisposeBag()
     @IBOutlet weak var inputTextView: UITextField!
     var oneShow:vmModelShow!
     override func viewDidLoad() {
         super.viewDidLoad()
+         NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: ["post":"NewTest"])
         //self.testONE()
         //self.testONE1()
         //self.DispatchQueueTest()
         //self.twoTest()
-        //self.dealWithTest()
+        //self.dealWithTest()布局的三种方式代码布局/xib布局/storeboard布局 一般的frame比masnory较节省性能
         //同步栅栏和异步栅栏都能够阻塞队列上的任务,但是最大的区别在于能否阻塞当前线程 同步栅栏异步栅栏能够阻塞队列任务
         //创建一个串型队列执行异步任务 执行同步任务//不要在主列队中执行同步任务，这样会造成死锁问题 不要在主线程执行同步任务这样会死锁的呀线程死锁
         let delay = DispatchTime.now() + 10
@@ -61,6 +63,13 @@ class twoShowViewController: UIViewController {
         driver的使用提供了一种简单的ui编程代码的响应式编程代码 它满足一下3个条件 不会产生error当产生error的时候可以返回自己业务逻辑错误的提示
          一定在主线程监听UI
         共享状态变化()
+        监测堆栈信息的方法在开发过程中使用的是最直接最开心的方法在开发过程中 卡顿主要是通过监听NSRunloopObserverRef试试获取状态值的变化如下
+         static void runLoopObsercerCallBack(CFRunLoopObserverRef observer CFRunLoopActicity void*info){
+          object ->activity = activity//注册RunLoop状态观察另外开启一个线程试试计算两个状态区域之间的耗时是否达到却只
+         dispatch_semaphore_t让子线程更能及时的通过nSrunloop的状态变化卡顿覆盖范围 多次连续小卡动以及单次长时间卡顿。
+         }
+         
+         
 */
       self.oneShow = vmModelShow.init(oneShow: self.inputTextView.rx.text.orEmpty.asDriver())
         

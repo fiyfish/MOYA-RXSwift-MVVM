@@ -57,7 +57,6 @@
 		2891A7CD25217FB00044B44D /* FindController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891A7CC25217FB00044B44D /* FindController.swift */; };
 		2891A7CF25217FC40044B44D /* MyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891A7CE25217FC40044B44D /* MyController.swift */; };
 		2891A7D1252188D50044B44D /* ScenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891A7D0252188D50044B44D /* ScenceViewController.swift */; };
-		2891A80F25218ED70044B44D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891A80E25218ED70044B44D /* SceneDelegate.swift */; };
 		2891A811252193400044B44D /* TTUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891A810252193400044B44D /* TTUtil.swift */; };
 		2891A8192521E13C0044B44D /* PublicObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 2891A8182521E13C0044B44D /* PublicObj.m */; };
 		28B1760725396D6100D01AE1 /* mvvmexercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760625396D6100D01AE1 /* mvvmexercise.swift */; };
@@ -152,7 +151,6 @@
 		2891A7CC25217FB00044B44D /* FindController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindController.swift; sourceTree = "<group>"; };
 		2891A7CE25217FC40044B44D /* MyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyController.swift; sourceTree = "<group>"; };
 		2891A7D0252188D50044B44D /* ScenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenceViewController.swift; sourceTree = "<group>"; };
-		2891A80E25218ED70044B44D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2891A810252193400044B44D /* TTUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTUtil.swift; sourceTree = "<group>"; };
 		2891A8162521E13B0044B44D /* XunLei-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XunLei-Bridging-Header.h"; sourceTree = "<group>"; };
 		2891A8172521E13C0044B44D /* PublicObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicObj.h; sourceTree = "<group>"; };
@@ -279,7 +277,6 @@
 				2891A8182521E13C0044B44D /* PublicObj.m */,
 				2891A810252193400044B44D /* TTUtil.swift */,
 				2891A78A2520350F0044B44D /* AppDelegate.swift */,
-				2891A80E25218ED70044B44D /* SceneDelegate.swift */,
 				286406A42533ECFC005F33E1 /* videoListTableViewCell.swift */,
 				286406A52533ECFC005F33E1 /* videoListTableViewCell.xib */,
 				2891A7BA252036030044B44D /* AVPlayViewController.swift */,
@@ -637,7 +634,6 @@
 				2891A8192521E13C0044B44D /* PublicObj.m in Sources */,
 				28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */,
 				285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */,
-				2891A80F25218ED70044B44D /* SceneDelegate.swift in Sources */,
 				28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */,
 				285FB2C8253D40C700FD9A42 /* AnimateloadingView.swift in Sources */,
 				285FB2D0253D43BC00FD9A42 /* Extensiones.swift in Sources */,

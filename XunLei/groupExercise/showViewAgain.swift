@@ -4,7 +4,7 @@
 //
 //  Created by abc on 2020/10/28.
 //  Copyright © 2020 abc. All rights reserved.
-//
+//iOS9以后有安全区域safearea布局的方法一般都写在安全区域里面
 import Foundation
 import RxCocoa
 import RxSwift

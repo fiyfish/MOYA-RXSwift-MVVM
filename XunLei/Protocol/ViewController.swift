@@ -5,18 +5,21 @@
 //  Created by abc on 2020/9/27.
 //  Copyright © 2020 abc. All rights reserved.
 //
-
+//今日任务 1.内存泄漏的所有情景模拟出来 2.git所有的指令全部属性查找并敲打一遍验证最总的效果
 import UIKit
 import SnapKit
 import Alamofire
 import SwiftyJSON
+typealias testLeaks = ()->Void
 class ViewController: UIViewController,protoShow {
     let kCellIdentifier = "CellIdentifier"
     var addButton:UIButton!
     var lable:UILabel!
+    var oneShow:testLeaks!
     var videoListShow:UITableView!
     let name:Array = ["大主宰","雪山飞狐","碧血剑","环太平洋3之我去打外星怪兽","环太平洋2之怪兽我来了","我和我的祖国","我和我的家乡","一点回家","姜子牙","大鱼海棠"]
     //颜色获取(定义方法)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.UI()
@@ -52,11 +55,16 @@ class ViewController: UIViewController,protoShow {
 //下载按钮的操作
 @objc func beginLoad()
  {
-    let vc  = twoShowViewController.init()
-   // vc.delegate = self
+    let vc  = LoadVideoViewController.init()
+    vc.delegate = self
      vc.modalPresentationStyle = .fullScreen;
      self .present(vc, animated: true, completion: nil)
 }
+    
+    @objc func test(nofi : Notification){
+        let str = nofi.userInfo!["post"]
+        print(String(describing: str!) + "this notifi")
+    }
     
     func dosSome(cell: videoListTableViewCell)->Void{
         

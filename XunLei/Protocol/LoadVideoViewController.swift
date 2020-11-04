@@ -27,7 +27,7 @@ class LoadVideoViewController: UIViewController, UITextViewDelegate{
     var backButton:UIButton!
     var inputLoadFile:UITextView!
     var loadButtonClick:UIButton!
-    open weak var delegate:protoShow!//open weak 在这里用weak去修饰这个代理对象去避免循环引用
+    open var delegate:protoShow!//open weak 在这里用weak去修饰这个代理对象去避免循环引用
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
@@ -87,6 +87,12 @@ class LoadVideoViewController: UIViewController, UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
        
         textView.text = nil;
+        
+    }
+    
+    deinit {
+        
+        print("deinit")
         
     }
     
