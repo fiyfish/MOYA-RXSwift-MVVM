@@ -70,6 +70,7 @@
 		28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23225494C26000ACF0A /* twoShowViewController.swift */; };
 		28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B23325494C26000ACF0A /* twoShowViewController.xib */; };
 		28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23625494C79000ACF0A /* showViewAgain.swift */; };
+		28BB9B3E25529A120095AE1E /* SystemUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB9B3D25529A120095AE1E /* SystemUtil.swift */; };
 		28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF30FF25415BB50029FA98 /* SwiftNotice.swift */; };
 		28BF31022542A3C60029FA98 /* modelShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31012542A3C60029FA98 /* modelShow.swift */; };
 		28BF31042542C50D0029FA98 /* File12121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31032542C50D0029FA98 /* File12121.swift */; };
@@ -167,6 +168,7 @@
 		28B4B23225494C26000ACF0A /* twoShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoShowViewController.swift; sourceTree = "<group>"; };
 		28B4B23325494C26000ACF0A /* twoShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = twoShowViewController.xib; sourceTree = "<group>"; };
 		28B4B23625494C79000ACF0A /* showViewAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showViewAgain.swift; sourceTree = "<group>"; };
+		28BB9B3D25529A120095AE1E /* SystemUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUtil.swift; sourceTree = "<group>"; };
 		28BF30FF25415BB50029FA98 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		28BF31012542A3C60029FA98 /* modelShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShow.swift; sourceTree = "<group>"; };
 		28BF31032542C50D0029FA98 /* File12121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12121.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				2891A7902520350F0044B44D /* Main.storyboard */,
 				2891A793252035160044B44D /* Assets.xcassets */,
 				2891A795252035160044B44D /* LaunchScreen.storyboard */,
+				28BB9B3D25529A120095AE1E /* SystemUtil.swift */,
 				2891A798252035160044B44D /* Info.plist */,
 				2891A7C625217F630044B44D /* tabBarController.swift */,
 				2891A7BC252038760044B44D /* File.swift */,
@@ -620,6 +623,7 @@
 				2891A78B2520350F0044B44D /* AppDelegate.swift in Sources */,
 				2891A811252193400044B44D /* TTUtil.swift in Sources */,
 				285FB2E1253E7E9200FD9A42 /* AutionListModel.swift in Sources */,
+				28BB9B3E25529A120095AE1E /* SystemUtil.swift in Sources */,
 				285FB2CB253D40C700FD9A42 /* LoadingViewable.swift in Sources */,
 				28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */,
 				28BF31022542A3C60029FA98 /* modelShow.swift in Sources */,

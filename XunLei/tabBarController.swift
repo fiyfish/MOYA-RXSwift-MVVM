@@ -10,15 +10,15 @@ import UIKit
 
 class tabBarController: UITabBarController {
   
-    private let  homePage = ViewController()
+    private let  homePage = UINavigationController.init(rootViewController: ViewController())
     
-    private let  scenePage = MailListViewController()
+    private let  scenePage = UINavigationController.init(rootViewController: MailListViewController())
     
-    private let devicePage = FindController()
+    private let devicePage = UINavigationController.init(rootViewController:videoPlayViewController())
     
-    private let findPage = ScenceViewController()
+    private let findPage = UINavigationController.init(rootViewController: ScenceViewController())
     
-    private let myPage = MyController()
+    private let myPage = UINavigationController.init(rootViewController: MyController())
     
     override func viewDidLoad() {
         super.viewDidLoad()

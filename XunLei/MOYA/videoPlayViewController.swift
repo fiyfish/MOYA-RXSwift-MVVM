@@ -25,7 +25,7 @@ class videoPlayViewController: UIViewController, UITableViewDelegate, UITableVie
     var channels:Array<JSON> = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "moya的使用说明"
+        self.title = "设备"
         self.view.backgroundColor = UIColor.white
         //创建表视图
         let button:UIButton = UIButton.init(frame: CGRect(x: 10, y:20, width: 30, height: 30))
@@ -84,6 +84,9 @@ class videoPlayViewController: UIViewController, UITableViewDelegate, UITableVie
     //处理列表项的选中事件
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //获取选中项信息
+        let view = FindController.init()
+        view.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(view, animated: true)
         let channelName = channels[indexPath.row]["title"].stringValue
         let channelId = channels[indexPath.row]["channel_id"].stringValue
         //使用我们的provider进行网络请求（根据频道ID获取下面的歌曲）

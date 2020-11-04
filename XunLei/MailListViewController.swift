@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import WebKit
 //内存泄漏第一种记得去释放掉对象 在试图下面要标记出dealloc/deinit方法的调用没有调用即说明存在这个对象未被释放掉存在错误
-class MailListViewController: UIViewController {
+class MailListViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"isTest"), object: nil)
         // Do any additional setup after loading the view.
     }
@@ -21,12 +23,17 @@ class MailListViewController: UIViewController {
         print("11111111")
         
  }
+  
+ 
+    
+    
   //最后一步很重要记得去移除这些通知
    deinit{
         
     NotificationCenter.default.removeObserver(self)
         
     }
+  
     /*
     // MARK: - Navigation
 
