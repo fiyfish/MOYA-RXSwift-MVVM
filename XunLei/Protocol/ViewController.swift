@@ -5,8 +5,7 @@
 //  Created by abc on 2020/9/27.
 //  Copyright © 2020 abc. All rights reserved.
 //
-//今日任务 1.内存泄漏的所有情景模拟出来 2.git所有的指令全部属性查找并敲打一遍验证最总的效
-//检出checkout分支 当前分支还是主分支 切换好测试完成后进行分之间的何并在一起
+//今日任务 1.内存泄漏的所有情景模拟出来 2.git所有的指令全部属性查找并敲打一遍验证最总的效果
 import UIKit
 import SnapKit
 import Alamofire
@@ -23,7 +22,7 @@ class ViewController: UIViewController,protoShow {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.UI();//测试代码最终展示的效果赞
+        self.UI()
         
         // Do any additional setup after loading the view.
     }
