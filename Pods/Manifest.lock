@@ -30,7 +30,11 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SnapKit (4.2.0)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
   - SwiftyJSON (5.0.0)
+  - WebViewJavascriptBridge (6.0.3)
 
 DEPENDENCIES:
   - Alamofire
@@ -45,7 +49,9 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift
   - SnapKit
+  - Socket.IO-Client-Swift
   - SwiftyJSON
+  - WebViewJavascriptBridge
 
 SPEC REPOS:
   trunk:
@@ -66,7 +72,10 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - Socket.IO-Client-Swift
+    - Starscream
     - SwiftyJSON
+    - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -86,8 +95,11 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: aff16ed8f30478a21d9e43db0b8f8d160575301c
+PODFILE CHECKSUM: 78908ba1d16bf14f3ec7f3e05b2695a5292230c0
 
 COCOAPODS: 1.9.3

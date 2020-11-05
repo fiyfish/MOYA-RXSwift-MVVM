@@ -4,17 +4,29 @@
 //
 //  Created by abc on 2020/9/28.
 //  Copyright © 2020 abc. All rights reserved.
-//
-
 import UIKit
 import WebKit
+import WebViewJavascriptBridge
+/* https://blog.csdn.net/zjpjay/article/details/103310279#1.JS%20与%20OC%20交互
+ 如果没有进行交互即oc端与swift的交互用如果不能去满足上述开发需求的情况下我们使用wkwebview的时候需要去使用当前的
+ 第一步如果uiwebview消耗太多内存会造成appcrasj
+ 如果wkwebview占用太多消耗内存会造成wkwebview展示出来的页面为nil
+ 这种情况下需要去借助uinavigationDelegate去处理当前的事件【webview reload】
+ 判断当前webview.title是否为nil进行重新加载
+ wkewbview与oc进行交互
+ wkwbview调用js方法 直接evaluteJavaScript后面加String给js传递参数或者调用js方法一般是方法名称()里面是要传递的参数
+ js调用oc的方法并传值 WKuserController声明方法 然后再代理方法里面WkScriptMessagehandler里面进行方法的didReceiver方法里面进行最后的代码使用去满足开发需求。
+ 注意创建wkuserController的时候的内存泄漏问题然后一般是重新的controller来处理，新的controller再绕用delegate绕回来。避免在使用过程中内存泄漏
+ wkwebviewBriger
+ regieset/callhandler 一边注册一边调用
+ */
 class FindController: UIViewController,WKUIDelegate,WKNavigationDelegate {
   var webview = WKWebView()
   var btnBack = UIBarButtonItem()
   var btnForward = UIBarButtonItem()
   var progBar = UIProgressView()
-    
-    override func viewDidLoad() {
+  //register//callHandler 去再这两块去注册
+  override func viewDidLoad() {
         super.viewDidLoad()
         let navHeight = self.navigationController?.navigationBar.frame.height
         //获取状态栏高度

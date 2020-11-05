@@ -85,7 +85,7 @@ class HomeController: UIViewController {
             }).disposed(by: disposeBag)
         subject.onError(NSError(domain: "local", code: 0, userInfo: nil))
         
-     let subject1 = BehaviorRelay<[String]>(value: ["1"])
+        let subject1 = BehaviorRelay<[String]>(value: ["1"])
          
         //修改value值
         subject1.accept(subject1.value + ["2", "3"])

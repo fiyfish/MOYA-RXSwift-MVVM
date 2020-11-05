@@ -14,5 +14,7 @@ pod "RxSwift"
 pod "RxCocoa"
 pod "RxDataSources"
 pod 'MLeaksFinder'
+pod 'WebViewJavascriptBridge'
+pod 'Socket.IO-Client-Swift'
 end
 
