@@ -29,7 +29,7 @@ class ViewController: UIViewController,protoShow {
     }
     
     func UI() -> Void {
-    
+       self.title = "首页";
        self.view.backgroundColor = UIColor.white
        self.lable = UILabel.init(frame
         : CGRect(x: Int(SCREEN_WIDTH/2-100), y: showStatusHeight+20, width:200 , height:30))
