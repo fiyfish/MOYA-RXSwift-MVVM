@@ -71,6 +71,7 @@
 		28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B23325494C26000ACF0A /* twoShowViewController.xib */; };
 		28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23625494C79000ACF0A /* showViewAgain.swift */; };
 		28BB9B3E25529A120095AE1E /* SystemUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB9B3D25529A120095AE1E /* SystemUtil.swift */; };
+		28BB9B402553EA520095AE1E /* StudyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB9B3F2553EA520095AE1E /* StudyProtocol.swift */; };
 		28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF30FF25415BB50029FA98 /* SwiftNotice.swift */; };
 		28BF31022542A3C60029FA98 /* modelShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31012542A3C60029FA98 /* modelShow.swift */; };
 		28BF31042542C50D0029FA98 /* File12121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31032542C50D0029FA98 /* File12121.swift */; };
@@ -169,6 +170,7 @@
 		28B4B23325494C26000ACF0A /* twoShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = twoShowViewController.xib; sourceTree = "<group>"; };
 		28B4B23625494C79000ACF0A /* showViewAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showViewAgain.swift; sourceTree = "<group>"; };
 		28BB9B3D25529A120095AE1E /* SystemUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUtil.swift; sourceTree = "<group>"; };
+		28BB9B3F2553EA520095AE1E /* StudyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyProtocol.swift; sourceTree = "<group>"; };
 		28BF30FF25415BB50029FA98 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		28BF31012542A3C60029FA98 /* modelShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShow.swift; sourceTree = "<group>"; };
 		28BF31032542C50D0029FA98 /* File12121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12121.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 		286406BF2537E5D7005F33E1 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				28BB9B3F2553EA520095AE1E /* StudyProtocol.swift */,
 				2891A78E2520350F0044B44D /* ViewController.swift */,
 				2891A7BE25205C170044B44D /* LoadVideoViewController.swift */,
 			);
@@ -599,6 +602,7 @@
 				285FB2BF253D355500FD9A42 /* oneMVVM.swift in Sources */,
 				2891A7CB25217F9D0044B44D /* MailListViewController.swift in Sources */,
 				285FB2D3253D5D7100FD9A42 /* ReactiveExtensiones.swift in Sources */,
+				28BB9B402553EA520095AE1E /* StudyProtocol.swift in Sources */,
 				28B4B22F25490772000ACF0A /* OneDayViewController.swift in Sources */,
 				28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */,
 				286406BE2536E440005F33E1 /* PeopleSHow.swift in Sources */,

@@ -10,13 +10,37 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SnapKit
+//尾随闭包函数最后一个参数是一个闭包的时候为了书写更加简单直观我们使用尾随闭包第一步身略参数第二步在可好里面
 class twoShowViewController: UIViewController {
     let disposeBage = DisposeBag()
+    typealias test = ()->Void
+    var datArray:NSMutableArray!
+    typealias intBlock = () -> Int
+    typealias twoTest = (String,String)->String
     @IBOutlet weak var inputTextView: UITextField!
     var oneShow:vmModelShow!
     override func viewDidLoad() {
         super.viewDidLoad()
-         NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: ["post":"NewTest"])
+        self.datArray = NSMutableArray.init()
+        self.datArray.add("0")
+        self.datArray.add("2")
+        self.datArray.add(1)
+        let testOne:(String,String)->String = {(str1,str2) in return str1+str2}
+        print(testOne("1","2"))
+        let two:()->String = {return "eqeqewqeqe"}
+        let three:()->Void = {print("eqeqewqeqeqeq")}
+        NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: ["post":"NewTest"])
+         let a:test = {
+            print("eqeqeqeqeqeqe")
+         }
+        let b:twoTest = { str1,str2 in
+            return str2+str1
+        }
+        print(b("1","2"))
+        showYouTest {
+         print("我是闭包")
+        }
+        
         //self.testONE()
         //self.testONE1()
         //self.DispatchQueueTest()
@@ -32,6 +56,10 @@ class twoShowViewController: UIViewController {
         //信号量并发执行5次
         DispatchQueue.concurrentPerform(iterations: 5) {
             print("\($0)")
+        }
+        self.blockShowView { (str1) -> Int in
+        
+            return 1
         }
         //同步队列 异步队列任务
         let queue = DispatchQueue(label: "1313131213131")//同步围栏和异步围栏的围栏效果操作是为了一些读写操作的安全性
@@ -68,18 +96,28 @@ class twoShowViewController: UIViewController {
           object ->activity = activity//注册RunLoop状态观察另外开启一个线程试试计算两个状态区域之间的耗时是否达到却只
          dispatch_semaphore_t让子线程更能及时的通过nSrunloop的状态变化卡顿覆盖范围 多次连续小卡动以及单次长时间卡顿。
          }
-         
-         
-*/
+      */
       self.oneShow = vmModelShow.init(oneShow: self.inputTextView.rx.text.orEmpty.asDriver())
-        
-        self.oneShow.pageshow.drive(onNext: { (text) in
-            
-         print(text)
-           
-        }).disposed(by: disposeBage)
-        
-        // Do any additional setup after loading the view.
+      self.oneShow.pageshow.drive(onNext: { (text) in
+      print(text)
+      }).disposed(by: disposeBage)
+     // Do any additional setup after loading the view.
+    }
+     func showYouTest(testBlock:@escaping () -> Void){
+     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+5) {
+     testBlock()
+    }
+    print("eqeqewqeqe")
+}
+   func blockShowView (test:(String)->Int) -> Void {}
+
+    func catchValue(number:Int) ->intBlock{
+    var totalValue = 0
+        let testBlock:intBlock = {
+        totalValue += number
+        return totalValue
+        }
+     return testBlock
     }
 //异步任务线程组 一个一个添加任务当其他一系列任务完成后最后去执行监听完成任务后的回调
     public func DispatchQueueTest(){
@@ -213,7 +251,6 @@ class twoShowViewController: UIViewController {
         }
 }
 
-    
     /*
     // MARK: - Navigation
 

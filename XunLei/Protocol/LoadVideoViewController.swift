@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxDataSources
 /*
  协议的使用如下：规定一群使用协议的对象执行协议里面可执行与不可执行协议的方法
               在代理方法里面声明协议然后声明一个中搜协议对象的代理对象然后将这个代理对象设置为执行者
@@ -15,15 +17,15 @@ import UIKit
               执行协议满足协议然后在方法里面设置代理对象是自己即self
               委托方在特定方法里面执行代理方要执行的代码逻辑
               执行方执行委托代码然后执行委托执行的方法并最总显示出来去满足开发需求
+              在协议里面声明一个属性get/set去进行操作需要在满足协议的对象中声明这些个属性值
  */
 @objc
 protocol protoShow {
-    
+     var type:String{get set}
      func describeName() -> Void//必须执行的方法
      @objc optional func doNotDo() ->Void//不必须执行的方法需要加一个objc去修饰这个协议同时还要声明@objc optional 这个属性值
 }
 class LoadVideoViewController: UIViewController, UITextViewDelegate{
-    
     var backButton:UIButton!
     var inputLoadFile:UITextView!
     var loadButtonClick:UIButton!

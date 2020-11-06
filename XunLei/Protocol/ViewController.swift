@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 typealias testLeaks = ()->Void
 class ViewController: UIViewController,protoShow {
+    var type = "type"
     let kCellIdentifier = "CellIdentifier"
     var addButton:UIButton!
     var lable:UILabel!
