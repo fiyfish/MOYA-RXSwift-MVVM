@@ -16,5 +16,6 @@ pod "RxDataSources"
 pod 'MLeaksFinder'
 pod 'WebViewJavascriptBridge'
 pod 'Socket.IO-Client-Swift'
+pod 'RealmSwift'
 end
 

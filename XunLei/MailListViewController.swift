@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 import SocketIO
 //内存泄漏第一种记得去释放掉对象 在试图下面要标记出dealloc/deinit方法的调用没有调用即说明存在这个对象未被释放掉存在错误 非逃逸闭包的生命周期把闭包当作参数传递给函数 函数中调用闭包 退出函数 闭包生命周期结束即非逃逸闭包的生命周期与函数相同 逃逸闭包 执行函数 函数结束调用闭包仍被其他对象持有不会在函数结束时候释放。非逃逸闭包/逃逸闭包
-
 class MailListViewController: UIViewController{
     var array:NSMutableArray!
     var dict:NSMutableDictionary!
@@ -30,6 +29,15 @@ class MailListViewController: UIViewController{
         print(threeSrteng)
         self.copyArray = ["1","2","3","4","5"]
         let favorites : Set<String> = ["红色","红色","蓝色"]
+        var stringCode = "1990"
+        var pageString = Int(stringCode)
+        var twoPageString = Float(stringCode)
+        var threePageString = Double(stringCode)
+        var fourPageString = Double(stringCode)//类名+()+字符传转特定类型数字
+        var val4 = "25.0";
+        let count = Double(val4);
+        print("\(2)")
+        print("\(12121212)")//数字等直接抓String类型
         print(favorites)//自动过滤掉set里面重复的元素
         self.dict = ["1":"2","2":"3"]
         self.array.add(0)
@@ -63,11 +71,10 @@ class MailListViewController: UIViewController{
             socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
                 socket.emit("update", ["amount": cur + 2.50])
             }
-
             ack.with("Got your currentAmount", "dude")
         }
          
-         socket.connect()
+        socket.connect()
         //NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"isTest"), object: nil)
         // Do any additional setup after loading the view.
     }
@@ -87,9 +94,8 @@ class MailListViewController: UIViewController{
   //最后一步很重要记得去移除这些通知
    deinit{
         
-    NotificationCenter.default.removeObserver(self)
-        
-    }
+     NotificationCenter.default.removeObserver(self)//iOS9之后系统会默认在deinit方法里面移除掉通知的事件
+  }
   
     /*
     // MARK: - Navigation
