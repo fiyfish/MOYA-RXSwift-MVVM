@@ -12,6 +12,16 @@ class MyController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
+         空合运算符 ?? 如果 ？？ 号前面的值不为nil者将??前面的值解包返回否则取??取后面的值即时返回的值
+         */
+         var type:String? = "two"
+         let pick = type ?? "one"
+         print(pick)
+        var p = 3>2 ? 1:5
+        print("\(p)")
+        //搬砖者的思维逻辑1.它是干嘛的 2.它在什么情况下用 3.它有什么别人取代不了的情况 4。使用它需要注意哪些细节问题
+        //这就是一个搬砖者学习新知识的4问 这4个问题都搞明白了你才可以说你是一个合格的搬砖者。
         //RealmSwift能够让你以安全稳定苏旭的方式来高效编写引用的数据模型层例子如下数据模型的涂层如下：
         /*
          class Dog:Object{
@@ -41,6 +51,9 @@ class MyController: UIViewController {
         let realm = try! Realm()
         try! realm.writer{
          realm.add(myDog)//这将会初始法出一个默认Realm数据库 let realm = try！Realm()//try! Realm()
+         }
+         try!.realm.writer{
+         author.name = "thoms Pynchon"
          }
          try! realm.writer{
          realm.add(myDog)//Realm数据库Realm.configuration的对象实例Realm.configuration//configuration对于本地的Realm数据库而言可以配置Realm文件在磁盘上的路径
