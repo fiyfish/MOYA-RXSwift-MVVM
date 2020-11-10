@@ -9,7 +9,11 @@
 import UIKit
 //import RealmSwift
 class MyController: UIViewController {
-
+  
+    enum fileGet:Error {
+        case addressError
+        case getNoData
+     }
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
@@ -18,8 +22,16 @@ class MyController: UIViewController {
          var type:String? = "two"
          let pick = type ?? "one"
          print(pick)
-        var p = 3>2 ? 1:5
-        print("\(p)")
+         var p = 3>2 ? 1:5
+         print("\(p)")
+        var result = try? readFile(file: "e1ee121")
+        var result1 = try!readFile(file: "eqeqeqeqeqe")
+        //抛出异常后也就是异常出现后如何处理用throwing函数传递错误
+        //try？方式最终返回一个可选值如果出现异常则返回一个nil没有异常则返回对应的值不处理异常
+        //try！强制解析告诉该方法那样异常一旦出现异常则程序会自动崩溃
+        defer {
+            print("处理最后释放的资源数据")
+        }
         //搬砖者的思维逻辑1.它是干嘛的 2.它在什么情况下用 3.它有什么别人取代不了的情况 4。使用它需要注意哪些细节问题
         //这就是一个搬砖者学习新知识的4问 这4个问题都搞明白了你才可以说你是一个合格的搬砖者。
         //RealmSwift能够让你以安全稳定苏旭的方式来高效编写引用的数据模型层例子如下数据模型的涂层如下：
@@ -75,6 +87,22 @@ class MyController: UIViewController {
         // tanDogs = realm.objects(Dog.self).filter(Predicate)//在这里去进行条件的处理满足条件
         //print(realm.configuration.fileURL!)
        // Do any additional setup after loading the view.
+    }
+    
+    func readFile(file:String) throws -> String{
+    
+       if file == ""{
+            
+        throw fileGet.addressError
+     
+        }
+        
+        if file == "11"{
+            
+            throw fileGet.getNoData
+        }
+        
+        return "123"
     }
 /*
 移动端数据库的常见操作如下
