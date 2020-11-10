@@ -9,14 +9,14 @@
 import UIKit
 //import RealmSwift
 class MyController: UIViewController {
-  
+    var onebutton : UIButton!
     enum fileGet:Error {
         case addressError
         case getNoData
      }
     override func viewDidLoad() {
-        super.viewDidLoad()
-        /*
+         super.viewDidLoad()
+         /*
          空合运算符 ?? 如果 ？？ 号前面的值不为nil者将??前面的值解包返回否则取??取后面的值即时返回的值
          */
          var type:String? = "two"
@@ -24,8 +24,8 @@ class MyController: UIViewController {
          print(pick)
          var p = 3>2 ? 1:5
          print("\(p)")
-        var result = try? readFile(file: "e1ee121")//try?返回的值解析可能为nil也可能存在值
-        var result1 = try!readFile(file: "eqeqeqeqeqe")//try!//try!返回的值进行强制解析最终返回一个值do/catch
+         var result = try? readFile(file: "e1ee121")//try?返回的值解析可能为nil也可能存在值
+         var result1 = try!readFile(file: "eqeqeqeqeqe")//try!//try!返回的值进行强制解析最终返回一个值do/catch
         //抛出异常后也就是异常出现后如何处理用throwing函数传递错误
         //try？方式最终返回一个可选值如果出现异常则返回一个nil没有异常则返回对应的值不处理异常
         //try！强制解析告诉该方法那样异常一旦出现异常则程序会自动崩溃
