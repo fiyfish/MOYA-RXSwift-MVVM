@@ -24,8 +24,8 @@ class MyController: UIViewController {
          print(pick)
          var p = 3>2 ? 1:5
          print("\(p)")
-        var result = try? readFile(file: "e1ee121")
-        var result1 = try!readFile(file: "eqeqeqeqeqe")
+        var result = try? readFile(file: "e1ee121")//try?返回的值解析可能为nil也可能存在值
+        var result1 = try!readFile(file: "eqeqeqeqeqe")//try!//try!返回的值进行强制解析最终返回一个值do/catch
         //抛出异常后也就是异常出现后如何处理用throwing函数传递错误
         //try？方式最终返回一个可选值如果出现异常则返回一个nil没有异常则返回对应的值不处理异常
         //try！强制解析告诉该方法那样异常一旦出现异常则程序会自动崩溃
