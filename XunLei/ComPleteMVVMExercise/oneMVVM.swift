@@ -18,6 +18,7 @@ import SwiftyJSON
  ReplaySubjects 存在一个缓冲区重复发射符合缓冲区域个数的元素给新的订阅者
  Variable是BehaviorSubject的包装subjects//PublishSubject。在这里进行路线的操作
  BehaviorSubjects 只会输出最新添加的一个元素并在error/complish完成不再执行任何的操作
+ subjects/observablesswift
  */
 class oneMVVM{
 //这里没有初始法的方法即没有init方法所以要给生成的变量一个开始值然后在这个值里面进行数据处理去满足开发需求
@@ -34,14 +35,12 @@ class oneMVVM{
     public let typeString:Observable<String>
     public let error : PublishSubject<HomeError> = PublishSubject()//声明4个subject去表面这个即使序列又是观察者
     //public let error :PublishSubject<Bool> = PublishSubject()前面半部分是序列//后面半部分是观察者两者一一响应
-   private let disposable = DisposeBag()
-    
+    private let disposable = DisposeBag()
     init(typeString:Observable<String>) {
-        
-        self.typeString = typeString
+    self.typeString = typeString
     }
     //.filter{!$0.isEmpty}.flatMapLatest
-   public func requestData(){
+    public func requestData(){//.post
         self.loading.onNext(true)
             APIManager.requestData(url: "dcd86ebedb5e519fd7b09b79dd4e4558/raw/b7505a54339f965413f5d9feb05b67fb7d0e464e/MvvmExampleApi.json", method: .get, parameters: nil, completion: { (result) in
                 self.loading.onNext(false)
@@ -56,12 +55,12 @@ class oneMVVM{
                     
                    //let model = returnJson["Albums"].arrayValue.compactMap {return Album(data: try! $0.rawData())}
                     //在这里加加将这个类型值一一便利转化为特定模型的值并添加到数组中去
-                
-                let albums = returnJson["Albums"].arrayValue.compactMap {return Album(data: try! $0.rawData())}
+                 let albums = returnJson["Albums"].arrayValue.compactMap {return Album(data: try! $0.rawData())}
+                 //4.1语法使用的compactMap用来代理flatMap在标准库里面可以过滤nil 然后对每一个元素进行对应的操作
                     let tracks = returnJson["Tracks"].arrayValue.compactMap {return Track(data: try! $0.rawData())}//swiftjson里面的序列化和反序列化操作
                     self.albums.onNext(albums)
                     self.tracks.onNext(tracks)
-                case .failure(let failure) :
+                    case .failure(let failure) :
                     switch failure {
                     case .connectionError:
                         self.error.onNext(.internetError("Check your Internet connection."))
@@ -78,22 +77,10 @@ class oneMVVM{
    }
 /*
 flapMap
-
  将序列的元素转换为其他序列， 就很适合a序列转换为b序列，比如
  输入类型/序列， 输出序列
  flapMapLatest
  和flapMap相似，不同的是只发出最新元素
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  */
 /*
  throws抛出的异常必须要通过try来处理

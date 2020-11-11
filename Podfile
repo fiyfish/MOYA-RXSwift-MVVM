@@ -1,4 +1,6 @@
 platform :ios, '9.0'
+#flutter_application_path = '../Desktop/成品/flutter_module'
+#eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 use_frameworks!
 target 'XunLei' do
 pod "Alamofire" 
@@ -16,6 +18,8 @@ pod "RxDataSources"
 pod 'MLeaksFinder'
 pod 'WebViewJavascriptBridge'
 pod 'Socket.IO-Client-Swift'
-pod 'RealmSwift'
+#pod 'RealmSwift'
+#pod  'Texture'
+#install_all_flutter_pods(flutter_application_path)
 end
 

@@ -16,6 +16,7 @@ class MailListViewController: UIViewController{
     var copyArray:Array<String>!
     var setE:Set<String>!
     var twoCopyDict:Dictionary<String,String>!
+    var collectionView:UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         var dict = ["1":"test","2":"twoTest","3":"threeTest"]

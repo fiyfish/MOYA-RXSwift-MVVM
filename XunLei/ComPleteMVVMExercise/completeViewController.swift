@@ -91,7 +91,6 @@ class completeViewController: UIViewController {
         
         super.viewDidLoad()
         
-    
         self.view.backgroundColor = UIColor.white
         
         self.oneView = UITextField.init(frame:CGRect(x: 0, y: 0, width: 10, height: 10))

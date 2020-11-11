@@ -8,30 +8,118 @@
 
 import UIKit
 //import RealmSwift
-class MyController: UIViewController {
+
+class MyController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
+    var collectionView :UICollectionView!
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 188;
+    }
+    
+    //每一个cell的大小值显示
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+           let itemW = SCREEN_WIDTH/3-50/3
+           return CGSize(width: itemW, height: itemW)
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           //        let cell = collectionView .cellForItem(at: indexPath)
+           //        cell?.backgroundColor = armColor();
+           
+       }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OneCollectionViewCell
+        cell.backgroundColor = UIColor.white
+        cell.layer.cornerRadius = 5;
+        cell.layer.masksToBounds = true
+        return cell
+    }
+    //边框距离
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return  UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader{
+            let headerV = collectionView .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerIdentifier", for: indexPath)
+            headerV.backgroundColor = UIColor.purple
+            return headerV
+        }else if kind == UICollectionView.elementKindSectionFooter{
+            let footerV = collectionView .dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footIdentifier", for: indexPath)
+            footerV.backgroundColor = UIColor.orange
+            return footerV
+        }
+        return UICollectionReusableView.init()
+    }
+    
+    //    MARK: - 行最小间距
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
+    }
+    
+    //    MARK: - 列最小间距
+       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+           return 5
+       }
+    
+//    //    MARK: - headerView 高
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize (width:SCREEN_WIDTH, height: 200)
+//    }
+//
+//    //    MARK: - footerView 高
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        return CGSize (width: SCREEN_WIDTH, height: 10)
+//    }
     var onebutton : UIButton!
     enum fileGet:Error {
         case addressError
         case getNoData
      }
-    override func viewDidLoad() {
+       override func viewDidLoad() {
          super.viewDidLoad()
+        let layout = UICollectionViewFlowLayout.init()
+        self.collectionView = UICollectionView(frame:CGRect(x: 0, y: 0, width:0, height:0), collectionViewLayout: layout)
+         self.view.addSubview(self.collectionView)
+        self.collectionView.snp.makeConstraints { (make ) in
+            make.left.right.equalToSuperview()
+            if #available(iOS 11.0, *) {
+              make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+              make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+          } else {
+              make.top.equalTo(self.topLayoutGuide.snp.top)
+              make.bottom.equalTo(self.bottomLayoutGuide.snp.bottom)
+            }
+         }
+        layout.headerReferenceSize = CGSize(width: self.view.frame.size.width, height: 100);
+        layout.footerReferenceSize = CGSize(width: self.view.frame.size.width, height: 100);
+        self.collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerIdentifier")
+        self.collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footIdentifier")
+        let nib = UINib(nibName: "OneCollectionViewCell", bundle: nil) //nibName指的是我们创建的Cell文件名
+        self.collectionView.register(nib, forCellWithReuseIdentifier: "cell")
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.backgroundColor = UIColor.white
+
+         
+         //self.readFileName(file:"guysNameShow")
          /*
          空合运算符 ?? 如果 ？？ 号前面的值不为nil者将??前面的值解包返回否则取??取后面的值即时返回的值
          */
-         var type:String? = "two"
+         /*var type:String? = "two"
          let pick = type ?? "one"
          print(pick)
          var p = 3>2 ? 1:5
          print("\(p)")
-         var result = try? readFile(file: "e1ee121")//try?返回的值解析可能为nil也可能存在值
-         var result1 = try!readFile(file: "eqeqeqeqeqe")//try!//try!返回的值进行强制解析最终返回一个值do/catch
+        */
+        //swift的派发机制
+        //dynamic修饰的方法就是用消息派发的机制进行访问的Objective-C runtime
+         //var result = try? readFile(file: "e1ee121")//try?返回的值解析可能为nil也可能存在值
+         //var result1 = try!readFile(file: "eqeqeqeqeqe")//try!//try!返回的值进行强制解析最终返回一个值do/catch
         //抛出异常后也就是异常出现后如何处理用throwing函数传递错误
         //try？方式最终返回一个可选值如果出现异常则返回一个nil没有异常则返回对应的值不处理异常
         //try！强制解析告诉该方法那样异常一旦出现异常则程序会自动崩溃
-        defer {
-            print("处理最后释放的资源数据")
-        }
+       
         //搬砖者的思维逻辑1.它是干嘛的 2.它在什么情况下用 3.它有什么别人取代不了的情况 4。使用它需要注意哪些细节问题
         //这就是一个搬砖者学习新知识的4问 这4个问题都搞明白了你才可以说你是一个合格的搬砖者。
         //RealmSwift能够让你以安全稳定苏旭的方式来高效编写引用的数据模型层例子如下数据模型的涂层如下：
@@ -89,7 +177,16 @@ class MyController: UIViewController {
        // Do any additional setup after loading the view.
     }
     
-    func readFile(file:String) throws -> String{
+    func readFileName(file:String) -> String{
+        
+        return "name is deadLine"
+    }
+    
+    func someFunction( firstParameterName: Int, secondParameterName: Int) {}
+    
+    func twoDataw(name:Int,showNmae:Int)->String{return "e"}
+    
+     func readFile(file:String) throws -> String{
     
        if file == ""{
             
@@ -103,6 +200,30 @@ class MyController: UIViewController {
         }
         
         return "123"
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool{
+        return true
+    }
+    
+    //    MARK: - 高亮颜色
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath){
+        let cell = collectionView .cellForItem(at: indexPath)
+        cell?.backgroundColor = armColor()
+    }
+    
+    //    MARK: - 取消长按颜色
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath){
+        let cell = collectionView .cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.black
+    }
+
+    func armColor()->UIColor{
+        let red = CGFloat(arc4random()%256)/255.0
+        let green = CGFloat(arc4random()%256)/255.0
+        let blue = CGFloat(arc4random()%256)/255.0
+        print("red:\(red),green:\(green),blue:\(blue)")
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
     }
 /*
 移动端数据库的常见操作如下

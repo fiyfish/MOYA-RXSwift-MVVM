@@ -76,6 +76,9 @@
 		28BF31022542A3C60029FA98 /* modelShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31012542A3C60029FA98 /* modelShow.swift */; };
 		28BF31042542C50D0029FA98 /* File12121.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF31032542C50D0029FA98 /* File12121.swift */; };
 		28EB29A825396939005589DA /* MVVMExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB29A725396939005589DA /* MVVMExerciseViewController.swift */; };
+		28F7C484255BAE6500702702 /* OneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */; };
+		28F7C485255BAE6500702702 /* OneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F7C483255BAE6500702702 /* OneCollectionViewCell.xib */; };
+		28F7C487255BBDA200702702 /* twoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */; };
 		2C85E4487F995E2973B3CB91 /* Pods_XunLei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +178,9 @@
 		28BF31012542A3C60029FA98 /* modelShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modelShow.swift; sourceTree = "<group>"; };
 		28BF31032542C50D0029FA98 /* File12121.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File12121.swift; sourceTree = "<group>"; };
 		28EB29A725396939005589DA /* MVVMExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExerciseViewController.swift; sourceTree = "<group>"; };
+		28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCollectionViewCell.swift; sourceTree = "<group>"; };
+		28F7C483255BAE6500702702 /* OneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneCollectionViewCell.xib; sourceTree = "<group>"; };
+		28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB40E78A9DD8EC75FE02133F /* Pods-XunLei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.debug.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.debug.xcconfig"; sourceTree = "<group>"; };
 		CDDEF667560E1FE3866D4484 /* Pods-XunLei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.release.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.release.xcconfig"; sourceTree = "<group>"; };
 		EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XunLei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +305,9 @@
 				2891A7D0252188D50044B44D /* ScenceViewController.swift */,
 				2891A8162521E13B0044B44D /* XunLei-Bridging-Header.h */,
 				286406B42536C7B8005F33E1 /* mvc.swift */,
+				28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */,
+				28F7C483255BAE6500702702 /* OneCollectionViewCell.xib */,
+				28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */,
 			);
 			path = XunLei;
 			sourceTree = "<group>";
@@ -513,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				285FB2D7253D610A00FD9A42 /* MessageView.xib in Resources */,
+				28F7C485255BAE6500702702 /* OneCollectionViewCell.xib in Resources */,
 				28B4B23025490772000ACF0A /* OneDayViewController.xib in Resources */,
 				2891A797252035160044B44D /* LaunchScreen.storyboard in Resources */,
 				285FB2EB253FCC5700FD9A42 /* XiBTableViewCell.xib in Resources */,
@@ -600,11 +610,13 @@
 				285FB2F025400B9100FD9A42 /* designBlindr.swift in Sources */,
 				28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */,
 				285FB2BF253D355500FD9A42 /* oneMVVM.swift in Sources */,
+				28F7C487255BBDA200702702 /* twoCollectionViewCell.swift in Sources */,
 				2891A7CB25217F9D0044B44D /* MailListViewController.swift in Sources */,
 				285FB2D3253D5D7100FD9A42 /* ReactiveExtensiones.swift in Sources */,
 				28BB9B402553EA520095AE1E /* StudyProtocol.swift in Sources */,
 				28B4B22F25490772000ACF0A /* OneDayViewController.swift in Sources */,
 				28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */,
+				28F7C484255BAE6500702702 /* OneCollectionViewCell.swift in Sources */,
 				286406BE2536E440005F33E1 /* PeopleSHow.swift in Sources */,
 				285FB2CF253D43BC00FD9A42 /* Network.swift in Sources */,
 				285FB2D6253D610A00FD9A42 /* MessageView.swift in Sources */,
@@ -820,6 +832,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = XunLei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -843,6 +856,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = XunLei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

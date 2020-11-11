@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//UI/方法/功能/oc与swift混编/swift与flutter混编/打包上传/第三方库管理/逻辑交互实现方法/一些方法的使用/响应式编码/mvvm编码涉及的事件机制--信号---订阅者
+//UI/方法/功能/oc与swift混编/swift与flutter混编/打包上传/第三方库管理/逻辑交互实现方法/一些方法的使用/响应式编码/mvvm编码涉及的事件机制--信号---订阅者//参数中的_
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -20,7 +20,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
-    
-   
 }
 

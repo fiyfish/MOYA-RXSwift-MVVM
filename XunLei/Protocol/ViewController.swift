@@ -38,8 +38,18 @@ class ViewController: UIViewController,protoShow {
         self.lable.font = UIFont.systemFont(ofSize: 20)
          self.lable.text = "迅雷小白虫"
         
-        self.videoListShow = UITableView.init(frame: CGRect(x: 0, y: showStatusHeight+55, width: Int(SCREEN_WIDTH), height:Int(SCREEN_HEIGH) - (showStatusHeight+55)))
+        self.videoListShow = UITableView.init(frame: CGRect(x: 0, y:0 , width:0, height:0))
         self.view.addSubview(self.videoListShow)
+        self.videoListShow.snp.makeConstraints { (make ) in
+         make.left.right.equalToSuperview()
+        if #available(iOS 11.0, *) {
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        } else {
+            make.top.equalTo(self.topLayoutGuide.snp.top)
+            make.bottom.equalTo(self.bottomLayoutGuide.snp.bottom)
+           }
+         }
         self.videoListShow.delegate = self
         self.videoListShow.dataSource = self
         let nib = UINib(nibName: "videoListTableViewCell", bundle: nil) //nibName指的是我们创建的Cell文件名
@@ -56,10 +66,10 @@ class ViewController: UIViewController,protoShow {
 //下载按钮的操作
 @objc func beginLoad()
  {
-    let vc  = LoadVideoViewController.init()
-    vc.delegate = self
-     vc.modalPresentationStyle = .fullScreen;
-     self .present(vc, animated: true, completion: nil)
+//    let vc  = LoadVideoViewController.init()
+//    vc.delegate = self
+//     vc.modalPresentationStyle = .fullScreen;
+//     self .present(vc, animated: true, completion: nil)
 }
     
     @objc func test(nofi : Notification){
@@ -105,4 +115,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         return 75;
     }
 }
+/*
+ toplayoutGuide/bottomlayoutGuide其实是作为虚拟的占位view用于自动布局的时候帮助开发者避免顶部的状态栏导航栏和底部的tabbar等
+ 
+ */
 
