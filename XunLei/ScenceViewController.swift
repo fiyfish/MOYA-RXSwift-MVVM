@@ -25,6 +25,7 @@ class ScenceViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCellID")
         collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
+        collectionView.delegate = self
         return collectionView
     }()
     override func viewDidLoad() {
@@ -58,8 +59,6 @@ class ScenceViewController: UIViewController {
         }
         collectionView.reloadData()
     }
- 
-
 
 }
 
@@ -69,10 +68,18 @@ extension ScenceViewController : HWCollectionViewFlowLayoutDelegate {
         let heigth = itemWidth * item.h! / item.w!;
         return heigth
     }
-    
-    
 }
 
+extension ScenceViewController : UICollectionViewDelegate{
+    
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+          //        let cell = collectionView .cellForItem(at: indexPath)
+          //        cell?.backgroundColor = armColor();
+          
+       print("瀑布流在流水")
+          
+      }
+}
 extension ScenceViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return itemArray.count
@@ -82,6 +89,12 @@ extension ScenceViewController : UICollectionViewDataSource {
         cell.contentView.backgroundColor = UIColor.red
         return cell
     }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        return 1;
+    }
+
+   
 }
 /*
 import UIKit
