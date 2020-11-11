@@ -79,6 +79,8 @@
 		28F7C484255BAE6500702702 /* OneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */; };
 		28F7C485255BAE6500702702 /* OneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F7C483255BAE6500702702 /* OneCollectionViewCell.xib */; };
 		28F7C487255BBDA200702702 /* twoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */; };
+		28F7C48B255BD16600702702 /* HWCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C488255BD16500702702 /* HWCollectionViewFlowLayout.swift */; };
+		28F7C48D255BD16600702702 /* shop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28F7C48A255BD16600702702 /* shop.plist */; };
 		2C85E4487F995E2973B3CB91 /* Pods_XunLei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,8 @@
 		28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F7C483255BAE6500702702 /* OneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneCollectionViewCell.xib; sourceTree = "<group>"; };
 		28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoCollectionViewCell.swift; sourceTree = "<group>"; };
+		28F7C488255BD16500702702 /* HWCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		28F7C48A255BD16600702702 /* shop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shop.plist; sourceTree = "<group>"; };
 		BB40E78A9DD8EC75FE02133F /* Pods-XunLei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.debug.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.debug.xcconfig"; sourceTree = "<group>"; };
 		CDDEF667560E1FE3866D4484 /* Pods-XunLei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.release.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.release.xcconfig"; sourceTree = "<group>"; };
 		EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XunLei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +307,8 @@
 				2891A7CC25217FB00044B44D /* FindController.swift */,
 				2891A7CE25217FC40044B44D /* MyController.swift */,
 				2891A7D0252188D50044B44D /* ScenceViewController.swift */,
+				28F7C488255BD16500702702 /* HWCollectionViewFlowLayout.swift */,
+				28F7C48A255BD16600702702 /* shop.plist */,
 				2891A8162521E13B0044B44D /* XunLei-Bridging-Header.h */,
 				286406B42536C7B8005F33E1 /* mvc.swift */,
 				28F7C482255BAE6500702702 /* OneCollectionViewCell.swift */,
@@ -526,6 +532,7 @@
 				28B4B23025490772000ACF0A /* OneDayViewController.xib in Resources */,
 				2891A797252035160044B44D /* LaunchScreen.storyboard in Resources */,
 				285FB2EB253FCC5700FD9A42 /* XiBTableViewCell.xib in Resources */,
+				28F7C48D255BD16600702702 /* shop.plist in Resources */,
 				28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */,
 				285BB40625466A1800EECA2F /* videoPlayViewController.xib in Resources */,
 				286406A72533ECFC005F33E1 /* videoListTableViewCell.xib in Resources */,
@@ -654,6 +661,7 @@
 				2891A8192521E13C0044B44D /* PublicObj.m in Sources */,
 				28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */,
 				285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */,
+				28F7C48B255BD16600702702 /* HWCollectionViewFlowLayout.swift in Sources */,
 				28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */,
 				285FB2C8253D40C700FD9A42 /* AnimateloadingView.swift in Sources */,
 				285FB2D0253D43BC00FD9A42 /* Extensiones.swift in Sources */,

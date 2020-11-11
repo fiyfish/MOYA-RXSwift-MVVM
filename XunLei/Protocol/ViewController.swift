@@ -66,10 +66,10 @@ class ViewController: UIViewController,protoShow {
 //下载按钮的操作
 @objc func beginLoad()
  {
-//    let vc  = LoadVideoViewController.init()
-//    vc.delegate = self
-//     vc.modalPresentationStyle = .fullScreen;
-//     self .present(vc, animated: true, completion: nil)
+    let vc  = LoadVideoViewController.init()
+    vc.delegate = self
+     vc.modalPresentationStyle = .fullScreen;
+     self .present(vc, animated: true, completion: nil)
 }
     
     @objc func test(nofi : Notification){
