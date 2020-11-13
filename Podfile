@@ -20,6 +20,7 @@ pod 'WebViewJavascriptBridge'
 pod 'Socket.IO-Client-Swift'
 #pod 'RealmSwift'
 #pod  'Texture'
+pod 'SwiftLint'
 #install_all_flutter_pods(flutter_application_path)
 end
 

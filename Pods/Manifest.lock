@@ -33,6 +33,7 @@ PODS:
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
+  - SwiftLint (0.41.0)
   - SwiftyJSON (5.0.0)
   - WebViewJavascriptBridge (6.0.3)
 
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - RxSwift
   - SnapKit
   - Socket.IO-Client-Swift
+  - SwiftLint
   - SwiftyJSON
   - WebViewJavascriptBridge
 
@@ -74,6 +76,7 @@ SPEC REPOS:
     - SnapKit
     - Socket.IO-Client-Swift
     - Starscream
+    - SwiftLint
     - SwiftyJSON
     - WebViewJavascriptBridge
 
@@ -97,9 +100,10 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: 8a540d9afb1f8ec1f9b1b09e0c90e91d6ff7cde2
+PODFILE CHECKSUM: d9c2f2d4a5ff88579af9f5a955a70e9df5732253
 
 COCOAPODS: 1.9.3

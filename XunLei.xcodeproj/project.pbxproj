@@ -70,6 +70,8 @@
 		28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23225494C26000ACF0A /* twoShowViewController.swift */; };
 		28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B4B23325494C26000ACF0A /* twoShowViewController.xib */; };
 		28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B4B23625494C79000ACF0A /* showViewAgain.swift */; };
+		28B85C4B255E2E8600407511 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B85C4A255E2E8600407511 /* One.swift */; };
+		28B85C4F255E2EDB00407511 /* One.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B85C4E255E2EDB00407511 /* One.xib */; };
 		28BB9B3E25529A120095AE1E /* SystemUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB9B3D25529A120095AE1E /* SystemUtil.swift */; };
 		28BB9B402553EA520095AE1E /* StudyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB9B3F2553EA520095AE1E /* StudyProtocol.swift */; };
 		28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BF30FF25415BB50029FA98 /* SwiftNotice.swift */; };
@@ -177,6 +179,8 @@
 		28B4B23225494C26000ACF0A /* twoShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoShowViewController.swift; sourceTree = "<group>"; };
 		28B4B23325494C26000ACF0A /* twoShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = twoShowViewController.xib; sourceTree = "<group>"; };
 		28B4B23625494C79000ACF0A /* showViewAgain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showViewAgain.swift; sourceTree = "<group>"; };
+		28B85C4A255E2E8600407511 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
+		28B85C4E255E2EDB00407511 /* One.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = One.xib; sourceTree = "<group>"; };
 		28BB9B3D25529A120095AE1E /* SystemUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemUtil.swift; sourceTree = "<group>"; };
 		28BB9B3F2553EA520095AE1E /* StudyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyProtocol.swift; sourceTree = "<group>"; };
 		28BF30FF25415BB50029FA98 /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 		2891A7892520350F0044B44D /* XunLei */ = {
 			isa = PBXGroup;
 			children = (
+				28FA772F255E28700056331B /* designViewShow */,
 				28B4B23125494C03000ACF0A /* groupExercise */,
 				28B4B229254906EF000ACF0A /* Grooup Seven */,
 				285BB402254669F600EECA2F /* AVPlayer */,
@@ -410,6 +415,15 @@
 				28BF31012542A3C60029FA98 /* modelShow.swift */,
 			);
 			path = MVVMExercise;
+			sourceTree = "<group>";
+		};
+		28FA772F255E28700056331B /* designViewShow */ = {
+			isa = PBXGroup;
+			children = (
+				28B85C4A255E2E8600407511 /* One.swift */,
+				28B85C4E255E2EDB00407511 /* One.xib */,
+			);
+			path = designViewShow;
 			sourceTree = "<group>";
 		};
 		6C7A859C11A47F402302B742 /* Pods */ = {
@@ -546,6 +560,7 @@
 				28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */,
 				285BB40625466A1800EECA2F /* videoPlayViewController.xib in Resources */,
 				286406A72533ECFC005F33E1 /* videoListTableViewCell.xib in Resources */,
+				28B85C4F255E2EDB00407511 /* One.xib in Resources */,
 				2891A794252035160044B44D /* Assets.xcassets in Resources */,
 				2891A7922520350F0044B44D /* Main.storyboard in Resources */,
 				28B4B2252546B90F000ACF0A /* SwiftLearnViewController.xib in Resources */,
@@ -673,6 +688,7 @@
 				2891A8192521E13C0044B44D /* PublicObj.m in Sources */,
 				28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */,
 				285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */,
+				28B85C4B255E2E8600407511 /* One.swift in Sources */,
 				28F7C48B255BD16600702702 /* HWCollectionViewFlowLayout.swift in Sources */,
 				28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */,
 				285FB2C8253D40C700FD9A42 /* AnimateloadingView.swift in Sources */,

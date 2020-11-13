@@ -137,6 +137,9 @@ class MailListViewController: UIViewController{
     var collectionView:UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "情景"
+        let view1 = One.init(frame: CGRect(x: 0, y: 0, width:250, height:250))
+        self.view.addSubview(view1)
         var p1 = Puple(name: "11111", birthPlace: "111111", show: "1212121")
         Puple.qualification = "eqeqeqeq"
         p1.study()
