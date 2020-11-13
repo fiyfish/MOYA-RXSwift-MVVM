@@ -9,6 +9,124 @@
 import UIKit
 import WebKit
 import SocketIO
+protocol pet {
+    init(name :String)// 指定构造函数
+}
+//如果一个类继承了某个类而且尊贵送一个或者多个协议我们应该吧父类放在最前面然后依次用逗号排列 在swift中继承是单一的但是满足的协议可以满足很多个这个时候将父类放在最前面协议依次放在后面去满足开发协议的继承聚合和关联类型
+
+//构造函数的促使发
+class Cat : pet{
+    
+    var name:String = ""
+     required init(name:String){
+    
+        self.name = name
+    }
+}
+//扩展协议的属性和方法 扩展一个已经存在的类型来采纳和遵守一个新的协议无需访问现有代码的类型扩展可以添加新的属性方法和下表到已经存在的类型中并且因此苏旭你添加的协议满足任何需求
+extension CustomStringConvertible{
+    
+    var customDescription: String{
+    return "YQ"+description
+    }
+}
+protocol Student {
+    var name:String{get set}
+    var birthPlace:String{get set}
+    static var qualification:String{get set}//通过static声明一个类型属性
+    mutating func study()//
+    static func hardStudy()//只声明函数不需要去实现
+}
+//满足one协议方法的类或者结构体枚举等等都必须要去声明Student中方法和one中应该有的属性以及方法的最终实现效果协议的聚合
+/*
+ typealias Three = TwoProtocol & OneProtocol
+ func text(paramter:OneProtocol&TwoProtocol){}我们不管paramter什么类型参数只要他满足这个要求的协议即可去进行书写
+ 新协议和协议聚合在使用上的区别 不需要生产新的协议声明和使用在一个地方临时变量使用起来非常简单方便如何检查某个协议释放满足特别的协议使用is即可去
+ struct Person:OneProtocol{}
+ let p1= Person()
+ if(p is Oneprotocol){print(""yes)}
+ 如何让定义的协议只被类满足使用class
+ 协议的关联类型指的是根据使用场景的变化如果协议中某些属性存在逻辑想通而类型不同的情况可以使用associatedtype为这些属性的类型声明关联属性
+*/
+
+protocol WeightCalculable {
+    
+    associatedtype WeightAType//可称重协议weight属性返回的是具体满足协议类型实例的重量
+
+    var weight :WeightAType{get}
+}
+//类型管理在这里去动态的描述满足协议的对象所满足的协议类型
+struct car :WeightCalculable {
+    typealias WeightAType = Double
+    var weight: WeightAType//weight是double类型的值
+}
+struct car1:WeightCalculable {
+typealias WeightAType = Int
+var weight: WeightAType
+}
+//协议的扩展 1，扩展协议的属性和方法
+extension Student{
+
+    func study(){
+        
+        print(name)//协议的扩展可以直接读取协议中的变量和方法名称在协议的扩展中将协议的方法实现掉然后就是简单的调用就ok了
+    }
+
+
+}
+
+class pick:Student
+{
+    var name: String = ""
+    
+    var birthPlace: String = ""
+    
+    static var qualification: String = ""
+    
+    static func hardStudy() {
+        print("2")
+    }
+    
+}
+protocol twoFour:class,Student {
+// 只被类重视的协议
+}
+protocol one:Student {
+    
+    
+}
+
+struct Puple:Student {
+    var name: String = ""
+    var birthPlace: String = ""
+    var show:String = ""
+    static var qualification: String = "222"
+    static func hardStudy() {//在祝颂协议的类/枚举/结构体中去书写方法的具体实现
+         print("i want to study hard")
+     }
+     
+    mutating func study() {
+          print(" i study hard")
+          self.name = "MOYA"
+     }
+}
+
+class wuLianji:Student{
+
+    var name: String = ""
+    var birthPlace: String = ""
+    var show:String = ""
+       static var qualification: String = "222"
+       static func hardStudy() {//在祝颂协议的类/枚举/结构体中去书写方法的具体实现
+            print("i want to study hard")
+        }
+        
+      func study() {
+             print(" i study hard")
+             self.name = "MOYA"
+        }
+
+}
 //内存泄漏第一种记得去释放掉对象 在试图下面要标记出dealloc/deinit方法的调用没有调用即说明存在这个对象未被释放掉存在错误 非逃逸闭包的生命周期把闭包当作参数传递给函数 函数中调用闭包 退出函数 闭包生命周期结束即非逃逸闭包的生命周期与函数相同 逃逸闭包 执行函数 函数结束调用闭包仍被其他对象持有不会在函数结束时候释放。非逃逸闭包/逃逸闭包
 class MailListViewController: UIViewController{
     var array:NSMutableArray!
@@ -19,6 +137,13 @@ class MailListViewController: UIViewController{
     var collectionView:UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var p1 = Puple(name: "11111", birthPlace: "111111", show: "1212121")
+        Puple.qualification = "eqeqeqeq"
+        p1.study()
+        let p = pick.init()
+        pick.hardStudy()
+        Puple.hardStudy()//static 申明是实例属性和方法还是具体的属性和方法
+        let s1 : Student = p1//并不能去进行不存在协议中的单元设置一个合理的值类型
         var dict = ["1":"test","2":"twoTest","3":"threeTest"]
         self.array = NSMutableArray.init()
         self.setE = ["1","1","1","1"]

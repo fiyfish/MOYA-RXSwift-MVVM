@@ -5,7 +5,12 @@
 //  Created by abc on 2020/9/28.
 //  Copyright © 2020 abc. All rights reserved.
 //
-
+/*
+ oc的核心是面向对象即我们常说的封装继承和多态
+ swift的核心是面向协议代码是从一个协议开始去进行代码的编写核心是抽象和简化
+ class/struct/enum//protocol协议
+ 
+ */
 import UIKit
 
 class ShopItem: NSObject {
@@ -16,7 +21,6 @@ class ShopItem: NSObject {
 }
 
 class ScenceViewController: UIViewController {
-
     lazy var itemArray = [ShopItem]()
     lazy var collectionView : UICollectionView = {
         let fl = HWCollectionViewFlowLayout()
@@ -59,7 +63,12 @@ class ScenceViewController: UIViewController {
         }
         collectionView.reloadData()
     }
-
+/*
+    as? 转化成功是一个可选值转化不存在为nil
+    as！强制转化如果转化失败报runtime的错误
+    as 从派生类转化成为基类向上转型 值类型转化 语句类型转化 let personq as Student向上转类型值消除二义性数值类型转化 swift语句中进行匹配通过语法进行操作检查对象的类型然后进行处理
+*/
+    
 }
 
 extension ScenceViewController : HWCollectionViewFlowLayoutDelegate {

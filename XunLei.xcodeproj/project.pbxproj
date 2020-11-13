@@ -81,6 +81,9 @@
 		28F7C487255BBDA200702702 /* twoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */; };
 		28F7C48B255BD16600702702 /* HWCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C488255BD16500702702 /* HWCollectionViewFlowLayout.swift */; };
 		28F7C48D255BD16600702702 /* shop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28F7C48A255BD16600702702 /* shop.plist */; };
+		28F7C48F255BEC2E00702702 /* loadXibData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C48E255BEC2D00702702 /* loadXibData.swift */; };
+		28F7C491255BECE900702702 /* oneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F7C490255BECE900702702 /* oneView.swift */; };
+		28F7C493255D0F9000702702 /* designView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F7C492255D0F9000702702 /* designView.xib */; };
 		2C85E4487F995E2973B3CB91 /* Pods_XunLei.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +188,9 @@
 		28F7C486255BBDA200702702 /* twoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twoCollectionViewCell.swift; sourceTree = "<group>"; };
 		28F7C488255BD16500702702 /* HWCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		28F7C48A255BD16600702702 /* shop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shop.plist; sourceTree = "<group>"; };
+		28F7C48E255BEC2D00702702 /* loadXibData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadXibData.swift; sourceTree = "<group>"; };
+		28F7C490255BECE900702702 /* oneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = oneView.swift; sourceTree = "<group>"; };
+		28F7C492255D0F9000702702 /* designView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = designView.xib; sourceTree = "<group>"; };
 		BB40E78A9DD8EC75FE02133F /* Pods-XunLei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.debug.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.debug.xcconfig"; sourceTree = "<group>"; };
 		CDDEF667560E1FE3866D4484 /* Pods-XunLei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XunLei.release.xcconfig"; path = "Target Support Files/Pods-XunLei/Pods-XunLei.release.xcconfig"; sourceTree = "<group>"; };
 		EC7C9E479588A678430EEF30 /* Pods_XunLei.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XunLei.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +302,8 @@
 				286406A52533ECFC005F33E1 /* videoListTableViewCell.xib */,
 				2891A7BA252036030044B44D /* AVPlayViewController.swift */,
 				2891A7902520350F0044B44D /* Main.storyboard */,
+				28F7C48E255BEC2D00702702 /* loadXibData.swift */,
+				28F7C490255BECE900702702 /* oneView.swift */,
 				2891A793252035160044B44D /* Assets.xcassets */,
 				2891A795252035160044B44D /* LaunchScreen.storyboard */,
 				28BB9B3D25529A120095AE1E /* SystemUtil.swift */,
@@ -387,6 +395,7 @@
 			children = (
 				286406A82533FBCB005F33E1 /* videoPlayViewController.swift */,
 				286406AC25354F31005F33E1 /* netShow.swift */,
+				28F7C492255D0F9000702702 /* designView.xib */,
 			);
 			path = MOYA;
 			sourceTree = "<group>";
@@ -531,6 +540,7 @@
 				28F7C485255BAE6500702702 /* OneCollectionViewCell.xib in Resources */,
 				28B4B23025490772000ACF0A /* OneDayViewController.xib in Resources */,
 				2891A797252035160044B44D /* LaunchScreen.storyboard in Resources */,
+				28F7C493255D0F9000702702 /* designView.xib in Resources */,
 				285FB2EB253FCC5700FD9A42 /* XiBTableViewCell.xib in Resources */,
 				28F7C48D255BD16600702702 /* shop.plist in Resources */,
 				28B4B23525494C26000ACF0A /* twoShowViewController.xib in Resources */,
@@ -632,6 +642,7 @@
 				286406B82536E1ED005F33E1 /* MVVMViewController.swift in Sources */,
 				286406A92533FBCB005F33E1 /* videoPlayViewController.swift in Sources */,
 				2891A7BD252038760044B44D /* File.swift in Sources */,
+				28F7C491255BECE900702702 /* oneView.swift in Sources */,
 				2891A78F2520350F0044B44D /* ViewController.swift in Sources */,
 				285FB2E3253EC8FA00FD9A42 /* UIColor+Swift.swift in Sources */,
 				285FB2D9253D7F4800FD9A42 /* listModel.swift in Sources */,
@@ -649,6 +660,7 @@
 				28BB9B3E25529A120095AE1E /* SystemUtil.swift in Sources */,
 				285FB2CB253D40C700FD9A42 /* LoadingViewable.swift in Sources */,
 				28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */,
+				28F7C48F255BEC2E00702702 /* loadXibData.swift in Sources */,
 				28BF31022542A3C60029FA98 /* modelShow.swift in Sources */,
 				285FB2E7253ECFCB00FD9A42 /* RXSwift_UI_ViewController.swift in Sources */,
 				28B4B23725494C79000ACF0A /* showViewAgain.swift in Sources */,

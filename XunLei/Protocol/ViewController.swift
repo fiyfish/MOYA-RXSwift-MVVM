@@ -6,6 +6,7 @@
 //  Copyright © 2020 abc. All rights reserved.
 //
 //今日任务 1.内存泄漏的所有情景模拟出来 2.git所有的指令全部属性查找并敲打一遍验证最总的效果
+//set和get方法
 import UIKit
 import SnapKit
 import Alamofire
@@ -20,10 +21,47 @@ class ViewController: UIViewController,protoShow {
     var videoListShow:UITableView!
     let name:Array = ["大主宰","雪山飞狐","碧血剑","环太平洋3之我去打外星怪兽","环太平洋2之怪兽我来了","我和我的祖国","我和我的家乡","一点回家","姜子牙","大鱼海棠"]
     //颜色获取(定义方法)
-    
+    var a:Int = 0
+    var b:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.UI()
+        var _type:String = "1"//get和set方法
+        var type:String{
+        /*
+            willset{}
+            didset{}
+         */
+          get{
+            return _type
+           }
+            
+            set{
+            
+            _type = newValue
+            
+            }
+      }
+        let viewXib = oneView.init(frame: CGRect(x: 0, y: 120, width: 120, height: 120))
+        self.view .bringSubviewToFront(viewXib)
+        self.view.addSubview(viewXib)
+        var c :Int {//当我们获得属性值的时候调用get方法当我们设置属性值的时候设置set方法就这样去进行一个值的书写
+            
+            get{//willset和didset 在swift里面通过这2个值来监测属性的变化最后展示效果willset////didset
+                
+                return 1
+                
+            }
+            
+            set{
+            
+              b = newValue
+                
+            }
+            
+        }
+        
+        
         
         // Do any additional setup after loading the view.
     }
