@@ -135,6 +135,8 @@ extension videoPlayViewControllerd{
                     print("failed")
                 case.unknown:
                     print("unkonwn")
+            @unknown default:
+                print("other type")
             }
         }else if keyPath == "loadedTimeRanges"{
             let loadTimeArray = self.palyerItem.loadedTimeRanges

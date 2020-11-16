@@ -55,11 +55,9 @@ class FindController: UIViewController,WKUIDelegate,WKNavigationDelegate {
 
         // Do any additional setup after loading the view.
     }
-    
   override func viewWillDisappear(_ animated: Bool) {
       webview.removeObserver(self, forKeyPath: "estimatedProgress")
   }
-  
   // MARK: - WKNavigationDelegate
   
   func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -67,7 +65,6 @@ class FindController: UIViewController,WKUIDelegate,WKNavigationDelegate {
   }
   
   // MARK: - WKUIDelegate
-  
   func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
       // 实现非安全链接的跳转。如果目标主视图不为空,则允许导航
       if !(navigationAction.targetFrame?.isMainFrame != nil) {
@@ -75,7 +72,6 @@ class FindController: UIViewController,WKUIDelegate,WKNavigationDelegate {
       }
       return nil
   }
-  
   func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
       // 修复弹窗弹出的问题
       let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)

@@ -7,7 +7,9 @@
 //
 
 import UIKit
-//自定义Uiview在这里面所写的时候这个时候我们要重写init(frame:CGRect) override方法同时在requireinit？(coder:NSCoder)方法里面{fatalError(init(coder)has not been implemented)}//就是在这个方法里面去进行overrice init(frame:Cgrect)在这里面去写同时require.init?(coder:NScoder)
+//自定义Uiview在这里面所写的时候这个时候我们要重写init(frame:CGRect) override
+//方法同时在requireinit？(coder:NSCoder)方法里面{fatalError(init(coder)has not been
+//implemented)}//就是在这个方法里面去进行overrice init(frame:Cgrect)在这里面去写同时require.init?(coder:NScoder)
 class oneView: UIView {
     var view1:UIView!
     override init(frame: CGRect) {

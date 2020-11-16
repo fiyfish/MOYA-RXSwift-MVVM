@@ -4,7 +4,7 @@
 //
 //  Created by abc on 2020/10/13.
 //  Copyright © 2020 abc. All rights reserved.
-//
+// swiftlint:disable line_length
 
 import Foundation
 import Moya

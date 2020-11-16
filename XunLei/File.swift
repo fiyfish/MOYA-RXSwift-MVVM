@@ -33,7 +33,7 @@ let NAV_BACK_COLOR = HEXCOLOR(0xf4b542)
 let NAV_Title_COLOR = HEXCOLOR(0xffffff)
 let VIEW_BACK_COLOR = HEXCOLOR(0xe5e5e5)
 
-func SystemFont(font:CGFloat)->UIFont{
+func systemFont(font:CGFloat)->UIFont{
    return UIFont.boldSystemFont(ofSize: font)
 }
 
@@ -59,6 +59,6 @@ func isIphoneX() -> (Bool) {
     return false;
  }
 
-func RGBA(r:CGFloat, g:CGFloat, b:CGFloat, a:CGFloat) -> UIColor {
-       return UIColor(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: a)
+func RGBA(red:CGFloat, green:CGFloat, blue:CGFloat, alpha:CGFloat) -> UIColor {
+       return UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: alpha)
    }

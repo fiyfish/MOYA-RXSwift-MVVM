@@ -1,0 +1,16 @@
+excluded:
+    - Pods
+disabled_rules:
+- trailing_newline
+- opening_brace
+- empty_count
+- identifier_name #命名规则必须按照驼峰原则，与后台传的Json字段命名冲突，建议排除掉
+- function_parameter_count #函数参数个数 默认5 warning 8 error
+- file_length #文件长度
+- function_body_length#函数行数
+- force_try
+- comma
+- colon
+- force_cast #强制转换
+- type_name
+

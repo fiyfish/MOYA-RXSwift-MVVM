@@ -4,7 +4,7 @@
 //
 //  Created by yinhe on 2019/4/2.
 //  Copyright © 2019 yinhe. All rights reserved.
-//
+// swiftlint:disable line_length
 
 import UIKit
 
@@ -29,7 +29,7 @@ class TTUtil: NSObject {
         return label
     }
     
-    class func createButtonWith(Type btnType:UIButton.ButtonType, Title title:String?, Frame frame:CGRect, TitleColor titleColor:UIColor?, Font font:CGFloat?, BackgroundColor backgroundColor:UIColor?, Target target:Any?, Action action:Selector?, TextAligtment textAlightment:NSTextAlignment?) -> UIButton{
+class func createButtonWith(Type btnType:UIButton.ButtonType, Title title:String?, Frame frame:CGRect, TitleColor titleColor:UIColor?, Font font:CGFloat?, BackgroundColor backgroundColor:UIColor?, Target target:Any?, Action action:Selector?, TextAligtment textAlightment:NSTextAlignment?) -> UIButton{
         let button = UIButton(type: btnType)
         button.frame  = frame
         if title != nil {

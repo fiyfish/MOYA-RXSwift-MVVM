@@ -14,7 +14,8 @@ class videoListTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.videoImage.kf.setImage(with: URL(string: "http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"), placeholder: UIImage(named: "xxxxxxxxx"), options: .none, progressBlock: nil, completionHandler: nil)
+        let url = URL(string:"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg")
+        self.videoImage.kf.setImage(with:url, placeholder:nil, options: .none, progressBlock: nil, completionHandler: nil)
         // Initialization code
     }
     @IBOutlet weak var videoImage: UIImageView!

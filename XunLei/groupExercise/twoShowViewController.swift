@@ -30,13 +30,13 @@ class twoShowViewController: UIViewController {
         let two:()->String = {return "eqeqewqeqe"}
         let three:()->Void = {print("eqeqewqeqeqeq")}
         NotificationCenter.default.post(name: NSNotification.Name("isTest"), object: self, userInfo: ["post":"NewTest"])
-         let a:test = {
+         let aqee:test = {
             print("eqeqeqeqeqeqe")
          }
-        let b:twoTest = { str1,str2 in
+        let beqe:twoTest = { str1,str2 in
             return str2+str1
         }
-        print(b("1","2"))
+        print(beqe("1","2"))
         showYouTest {
          print("我是闭包")
         }
@@ -120,7 +120,7 @@ class twoShowViewController: UIViewController {
      return testBlock
     }
 //异步任务线程组 一个一个添加任务当其他一系列任务完成后最后去执行监听完成任务后的回调
-    public func DispatchQueueTest(){
+    public func dispatchQueueTest(){
     let queue = DispatchQueue.global()
     let group = DispatchGroup()
     group.enter()
@@ -199,26 +199,26 @@ class twoShowViewController: UIViewController {
     func testONE (){
     let 队列 = DispatchQueue(label: "队列的名称")
         队列.sync {
-            for i in 0..<3{
+            for text in 0..<3{
                 
-                print(i,terminator: "")
+                print(text,terminator: "")
                 
             }
             print(Thread.current)
         }
     
     队列.sync {
-               for i in 3..<6{
+               for ieeew in 3..<6{
                    
-                   print(i,terminator: "")
+                   print(ieeew,terminator: "")
                    
                }
                print(Thread.current)
            }
     
-    for i in 6..<9{
+    for ifff in 6..<9{
         
-        print(i,terminator: "")
+        print(ifff,terminator: "")
         print(Thread.current)
     }
         
@@ -227,26 +227,26 @@ class twoShowViewController: UIViewController {
         func testONE1 (){
         let 队列 = DispatchQueue(label: "队列的名称")
             队列.async {
-                for i in 0..<3{
+                for dataE in 0..<3{
                     
-                    print(i,terminator: "")
+                    print(dataE,terminator: "")
                     
                 }
                 print(Thread.current)
             }
         
         队列.async {
-                   for i in 3..<6{
+                   for again in 3..<6{
                        
-                       print(i,terminator: "")
+                       print(again,terminator: "")
                        
                    }
                    print(Thread.current)
                }
         
-        for i in 6..<9{
+        for pickShw in 6..<9{
             
-            print(i,terminator: "")
+            print(pickShw,terminator: "")
             print(Thread.current)
         }
 }

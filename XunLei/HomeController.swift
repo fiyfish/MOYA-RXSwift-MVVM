@@ -19,7 +19,11 @@ protocol twoSSSrococol {
 }//
 protocol twoSSSSProtocol{
 
-}//实现协议的方法在这里面去执行 通过扩展去帮某些类去实现最终的协议 extension UiviewController:ViewProperty{func printName(){}}通过扩展去实现这个协议本身没有实现的类的协议 协议是定义了一些规范属性方法 然后由一些类 结构体或者枚举来实现这些规范这一过程被称为满足了协议。主要分为以下几块 协议的基本原理 定义协议与实现协议 协议与构造器 结构体/类/枚举去实现满足协议的开发需求。满足多个协议的时候用，分开一般由父类线：然后是协议SomeProtoal，animation分离开来这是类的定义部分。定义协议与实现协议 协议可以定义类方法和实例方法使用static 协议定义方法名称但不做实现同时不能使用默认参数 mutating 实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating 关键字。实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating 关键字。swift与oc不一样 在oc中枚举只能玩int而swift中枚举可以是int/float/string/Bool等等 枚举的类型int/bool/string/float在这里去声明路的类型以及指令
+}//实现协议的方法在这里面去执行 通过扩展去帮某些类去实现最终的协议 extension UiviewController:ViewProperty{func printName(){}}通过扩展去实现这个协议本身没有实现的类的协议 协议是定义了一些规范属性方法 然后由一些类
+//结构体或者枚举来实现这些规范这一过程被称为满足了协议。主要分为以下几块 协议的基本原理 定义协议与实现协议 协议与构造器 结构体/类/枚举去实现满足协议的开发需求。满足多个协议的时候用，分开一般由父类线：然后是协议SomeProtoal，animation分离开
+//是类的定义部分。定义协议与实现协议 协议可以定义类方法和实例方法使用static 协议定义方法名称但不做实现同时不能使用默认参数 mutating 实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating
+//关键字。实现协议中的 mutating 方法时，若是类类型，则不用写 mutating 关键字。而对于结构体和枚举，则必须写 mutating 关键字。swift与oc不一样 在oc中枚举只能玩int而swift中枚举可以是int/float/string/Bool等等
+//枚举的类型int/bool/string/float在这里去声明路的类型以及指令
 /*
  enum Movement {
      case letf
@@ -119,7 +123,9 @@ class HomeController: UIViewController {
         subject.onNext("1")
         subject.onNext("2")
         subject.onNext("3")
-//每缓冲3个元素则会组合到一起发出如果1秒内不够3个也会发出有几个就发几个一个都没有发空数组[])结果如下["a","b","c"]["1","2","3"][][][][][]/1s发一个event如果window 操作符和 buffer 十分相似。不过 buffer 是周期性的将缓存的元素集合发送出来，而 window 周期性的将元素集合以 Observable 的形态发送出来。同时 buffer 要等到元素搜集完毕后，才会发出元素序列。而 window 可以实时发出元素序列。zip通常指的是当2个失误通常同时完成的情况下发生combinelaste将2哥何必任何依着发生改变就要去验证
+//每缓冲3个元素则会组合到一起发出如果1秒内不够3个也会发出有几个就发几个一个都没有发空数组[])结果如下["a","b","c"]
+//["1","2","3"][][][][][]/1s发一个event如果window 操作符和 buffer 十分相似。不过 buffer 是周期性的将缓存的元素集合发送出来，而 window 周期性的将元素集合以 Observable 的形态发送出来。同时 buffer
+//要等到元素搜集完毕后，才会发出元素序列。而 window 可以实时发出元素序列。zip通常指的是当2个失误通常同时完成的情况下发生combinelaste将2哥何必任何依着发生改变就要去验证
      let disponse = DisposeBag()
         
      let sequenceThatFails = PublishSubject<String>()

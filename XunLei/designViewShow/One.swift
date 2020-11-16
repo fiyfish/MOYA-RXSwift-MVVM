@@ -14,21 +14,19 @@ class One: UIView {
     override init(frame: CGRect) {
            super.init(frame: frame)
            // 加载xib
-           contentView = (Bundle.main.loadNibNamed("One", owner: self, options: nil)?.last as! UIView)
+           contentView = (Bundle.main.loadNibNamed("One", owner: self, options: nil)?.last as? UIView)
            // 设置frame
            contentView.frame = frame
            contentView.backgroundColor = UIColor.orange
            // 添加上去
            addSubview(contentView)
      }
-           
     @IBAction func touchInside(_ sender: Any) {
         
         print("YAYAYAAYAY")
     }
     required init?(coder aDecoder: NSCoder) {
-            
-     fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) has not been implemented")
     
     }
     /*
