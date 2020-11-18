@@ -84,6 +84,12 @@
 		28ACFB562563A41A0082F488 /* UIView+AdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB392563A4190082F488 /* UIView+AdjustFrame.m */; };
 		28ACFB572563A41A0082F488 /* BaseAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB3B2563A4190082F488 /* BaseAnimationViewController.m */; };
 		28ACFB582563A41A0082F488 /* JWWavesAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB3E2563A4190082F488 /* JWWavesAnimationView.m */; };
+		28ACFB652563AB700082F488 /* YULoadingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB5B2563AB6E0082F488 /* YULoadingLabel.m */; };
+		28ACFB662563AB700082F488 /* EmitterLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB5C2563AB6E0082F488 /* EmitterLayerView.m */; };
+		28ACFB672563AB700082F488 /* SnowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB5D2563AB6E0082F488 /* SnowView.m */; };
+		28ACFB682563AB700082F488 /* YUAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB5E2563AB6F0082F488 /* YUAnimationViewController.m */; };
+		28ACFB692563AB700082F488 /* YUReplicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB632563AB6F0082F488 /* YUReplicatorAnimation.m */; };
+		28ACFB6A2563AB700082F488 /* YUMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28ACFB642563AB6F0082F488 /* YUMainTableViewController.m */; };
 		28B1760725396D6100D01AE1 /* mvvmexercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760625396D6100D01AE1 /* mvvmexercise.swift */; };
 		28B1760A253972DE00D01AE1 /* completeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B17609253972DE00D01AE1 /* completeViewController.swift */; };
 		28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */; };
@@ -241,6 +247,18 @@
 		28ACFB3D2563A4190082F488 /* XRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRCollectionViewCell.h; sourceTree = "<group>"; };
 		28ACFB3E2563A4190082F488 /* JWWavesAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWWavesAnimationView.m; sourceTree = "<group>"; };
 		28ACFB3F2563A4190082F488 /* XRWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRWaterfallLayout.h; sourceTree = "<group>"; };
+		28ACFB592563AB6E0082F488 /* EmitterLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmitterLayerView.h; sourceTree = "<group>"; };
+		28ACFB5A2563AB6E0082F488 /* SnowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnowView.h; sourceTree = "<group>"; };
+		28ACFB5B2563AB6E0082F488 /* YULoadingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YULoadingLabel.m; sourceTree = "<group>"; };
+		28ACFB5C2563AB6E0082F488 /* EmitterLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmitterLayerView.m; sourceTree = "<group>"; };
+		28ACFB5D2563AB6E0082F488 /* SnowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnowView.m; sourceTree = "<group>"; };
+		28ACFB5E2563AB6F0082F488 /* YUAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUAnimationViewController.m; sourceTree = "<group>"; };
+		28ACFB5F2563AB6F0082F488 /* YUMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUMainTableViewController.h; sourceTree = "<group>"; };
+		28ACFB602563AB6F0082F488 /* YUReplicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUReplicatorAnimation.h; sourceTree = "<group>"; };
+		28ACFB612563AB6F0082F488 /* YUAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUAnimationViewController.h; sourceTree = "<group>"; };
+		28ACFB622563AB6F0082F488 /* YULoadingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YULoadingLabel.h; sourceTree = "<group>"; };
+		28ACFB632563AB6F0082F488 /* YUReplicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUReplicatorAnimation.m; sourceTree = "<group>"; };
+		28ACFB642563AB6F0082F488 /* YUMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUMainTableViewController.m; sourceTree = "<group>"; };
 		28B1760625396D6100D01AE1 /* mvvmexercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvmexercise.swift; sourceTree = "<group>"; };
 		28B17609253972DE00D01AE1 /* completeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completeViewController.swift; sourceTree = "<group>"; };
 		28B1760D2539831100D01AE1 /* checkTelephoneAndSecret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkTelephoneAndSecret.swift; sourceTree = "<group>"; };
@@ -427,6 +445,7 @@
 		28ACFB0E2563A3FB0082F488 /* 混淆 */ = {
 			isa = PBXGroup;
 			children = (
+				28ACFB6B2563ABEC0082F488 /* animation */,
 				28ACFB362563A4180082F488 /* BaseAnimationViewController.h */,
 				28ACFB3B2563A4190082F488 /* BaseAnimationViewController.m */,
 				28ACFB322563A4180082F488 /* BaseViewController.h */,
@@ -478,6 +497,25 @@
 				28ACFB202563A4160082F488 /* XRWaterfallLayout.m */,
 			);
 			path = "混淆";
+			sourceTree = "<group>";
+		};
+		28ACFB6B2563ABEC0082F488 /* animation */ = {
+			isa = PBXGroup;
+			children = (
+				28ACFB592563AB6E0082F488 /* EmitterLayerView.h */,
+				28ACFB5C2563AB6E0082F488 /* EmitterLayerView.m */,
+				28ACFB5A2563AB6E0082F488 /* SnowView.h */,
+				28ACFB5D2563AB6E0082F488 /* SnowView.m */,
+				28ACFB612563AB6F0082F488 /* YUAnimationViewController.h */,
+				28ACFB5E2563AB6F0082F488 /* YUAnimationViewController.m */,
+				28ACFB622563AB6F0082F488 /* YULoadingLabel.h */,
+				28ACFB5B2563AB6E0082F488 /* YULoadingLabel.m */,
+				28ACFB5F2563AB6F0082F488 /* YUMainTableViewController.h */,
+				28ACFB642563AB6F0082F488 /* YUMainTableViewController.m */,
+				28ACFB602563AB6F0082F488 /* YUReplicatorAnimation.h */,
+				28ACFB632563AB6F0082F488 /* YUReplicatorAnimation.m */,
+			);
+			path = animation;
 			sourceTree = "<group>";
 		};
 		28B17608253972B300D01AE1 /* ComPleteMVVMExercise */ = {
@@ -795,6 +833,7 @@
 				285FB2CA253D40C700FD9A42 /* loadingView.swift in Sources */,
 				285FB2F025400B9100FD9A42 /* designBlindr.swift in Sources */,
 				28ACFB562563A41A0082F488 /* UIView+AdjustFrame.m in Sources */,
+				28ACFB692563AB700082F488 /* YUReplicatorAnimation.m in Sources */,
 				28BF310025415BB50029FA98 /* SwiftNotice.swift in Sources */,
 				285FB2BF253D355500FD9A42 /* oneMVVM.swift in Sources */,
 				28ACFB4C2563A41A0082F488 /* DCPathButton.m in Sources */,
@@ -803,12 +842,14 @@
 				285FB2D3253D5D7100FD9A42 /* ReactiveExtensiones.swift in Sources */,
 				28BB9B402553EA520095AE1E /* StudyProtocol.swift in Sources */,
 				28B4B22F25490772000ACF0A /* OneDayViewController.swift in Sources */,
+				28ACFB6A2563AB700082F488 /* YUMainTableViewController.m in Sources */,
 				28ACFB4B2563A41A0082F488 /* XRWaterfallLayout.m in Sources */,
 				28B1760E2539831100D01AE1 /* checkTelephoneAndSecret.swift in Sources */,
 				28ACFB572563A41A0082F488 /* BaseAnimationViewController.m in Sources */,
 				28F7C484255BAE6500702702 /* OneCollectionViewCell.swift in Sources */,
 				286406BE2536E440005F33E1 /* PeopleSHow.swift in Sources */,
 				285FB2CF253D43BC00FD9A42 /* Network.swift in Sources */,
+				28ACFB662563AB700082F488 /* EmitterLayerView.m in Sources */,
 				28ACFB402563A4190082F488 /* TwoViewController.m in Sources */,
 				285FB2D6253D610A00FD9A42 /* MessageView.swift in Sources */,
 				28ACFB4D2563A41A0082F488 /* UIImage+RenderMode.m in Sources */,
@@ -845,6 +886,7 @@
 				285FB2CB253D40C700FD9A42 /* LoadingViewable.swift in Sources */,
 				28B4B23425494C26000ACF0A /* twoShowViewController.swift in Sources */,
 				28F7C48F255BEC2E00702702 /* loadXibData.swift in Sources */,
+				28ACFB682563AB700082F488 /* YUAnimationViewController.m in Sources */,
 				28BF31022542A3C60029FA98 /* modelShow.swift in Sources */,
 				28ACFB4A2563A41A0082F488 /* MCFireworksButton.m in Sources */,
 				28ACFB522563A41A0082F488 /* JWSameDirectionWavesAnimationView.m in Sources */,
@@ -860,6 +902,7 @@
 				285FB2EA253FCC5700FD9A42 /* XiBTableViewCell.swift in Sources */,
 				2891A8192521E13C0044B44D /* PublicObj.m in Sources */,
 				28B4B228254813D8000ACF0A /* TwoViewController.m in Sources */,
+				28ACFB672563AB700082F488 /* SnowView.m in Sources */,
 				285FB2DF253E7C8E00FD9A42 /* listModelExercise.swift in Sources */,
 				28B85C4B255E2E8600407511 /* One.swift in Sources */,
 				28F7C48B255BD16600702702 /* HWCollectionViewFlowLayout.swift in Sources */,
@@ -867,6 +910,7 @@
 				28ACFB532563A41A0082F488 /* KeyFrameAnimationViewController.m in Sources */,
 				285FB2C8253D40C700FD9A42 /* AnimateloadingView.swift in Sources */,
 				285FB2D0253D43BC00FD9A42 /* Extensiones.swift in Sources */,
+				28ACFB652563AB700082F488 /* YULoadingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
