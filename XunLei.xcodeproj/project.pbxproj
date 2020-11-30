@@ -620,11 +620,13 @@
 			buildConfigurationList = 2891A7B1252035160044B44D /* Build configuration list for PBXNativeTarget "XunLei" */;
 			buildPhases = (
 				660F201F9CE428EF4607400D /* [CP] Check Pods Manifest.lock */,
+				0ED9EB2B1EA5E083306D7815 /* [CP-User] Run Flutter Build flutter_moduleexcise Script */,
 				2891A7832520350F0044B44D /* Sources */,
 				2891A7842520350F0044B44D /* Frameworks */,
 				2891A7852520350F0044B44D /* Resources */,
 				9EAFF35748CDC96F78E22E2F /* [CP] Embed Pods Frameworks */,
 				2864C40D25620EB200828475 /* ShellScript */,
+				28D07CC22574C67E0077068C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -757,6 +759,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0ED9EB2B1EA5E083306D7815 /* [CP-User] Run Flutter Build flutter_moduleexcise Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../flutter_moduleexcise/.metadata",
+				"${SRCROOT}/../flutter_moduleexcise/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../flutter_moduleexcise/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../flutter_moduleexcise/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build flutter_moduleexcise Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../flutter_moduleexcise/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
 		2864C40D25620EB200828475 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -773,6 +791,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		28D07CC22574C67E0077068C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
 		};
 		660F201F9CE428EF4607400D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1086,7 +1122,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = XunLei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1110,7 +1146,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = XunLei/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

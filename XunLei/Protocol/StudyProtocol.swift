@@ -13,21 +13,20 @@ protocol protocola {
     var marks: Int { get set }
     var result: Bool { get set}
     var showName:Bool{get set}
-    
     func attendance() -> String
     func markssecured() -> String
-    
 }
-
+protocol twoStudent{
+    var name: Int{ get set}
+    func attaclName() ->String
+    func doSomthong()
+}
 protocol protocolb: protocola {
-    
     var present: Bool { get set }
     var subject: String { get set }
     var stname: String { get set }
     var typeShow:String {get set}
-    
 }
-
 /*
  Swift是不允许设置协议的可选的状态，协议声明的方法都是必须实现的。
  可以再协议与方法前面加@objc解决

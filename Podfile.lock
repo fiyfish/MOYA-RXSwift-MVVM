@@ -2,6 +2,11 @@ PODS:
   - Alamofire (4.9.1)
   - Differentiator (4.0.1)
   - FBRetainCycleDetector (0.1.4)
+  - Flutter (1.0.0)
+  - flutter_moduleexcise (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - Flutter
   - Kingfisher (4.10.1)
   - MBProgressHUD (1.2.0)
   - MLeaksFinder (1.0.0):
@@ -39,6 +44,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Flutter (from `../flutter_moduleexcise/.ios/Flutter/engine`)
+  - flutter_moduleexcise (from `../flutter_moduleexcise/.ios/Flutter`)
+  - FlutterPluginRegistrant (from `../flutter_moduleexcise/.ios/Flutter/FlutterPluginRegistrant`)
   - Kingfisher
   - MBProgressHUD
   - MLeaksFinder
@@ -80,10 +88,21 @@ SPEC REPOS:
     - SwiftyJSON
     - WebViewJavascriptBridge
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "../flutter_moduleexcise/.ios/Flutter/engine"
+  flutter_moduleexcise:
+    :path: "../flutter_moduleexcise/.ios/Flutter"
+  FlutterPluginRegistrant:
+    :path: "../flutter_moduleexcise/.ios/Flutter/FlutterPluginRegistrant"
+
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_moduleexcise: 274e8093acf02ba0fb9b02032a6615f13994bbda
+  FlutterPluginRegistrant: 2afd5ea46d3a949472c9b7da6462d8fbf7d8b16e
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
@@ -104,6 +123,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
-PODFILE CHECKSUM: d9c2f2d4a5ff88579af9f5a955a70e9df5732253
+PODFILE CHECKSUM: 3ec8427e4867525075d6b2b547173efed1b0d2e9
 
 COCOAPODS: 1.9.3
